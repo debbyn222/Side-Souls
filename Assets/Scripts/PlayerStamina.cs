@@ -1,27 +1,41 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStamina : MonoBehaviour
 {
-    public float maxStamina = 15f;  // Maximum stamina value
+    public Slider staminaSlider; // Reference to the UI Slider for stamina
+    [SerializeField] private float maxStamina = 15f;  // Maximum stamina value
     public float currentStamina;    // Current stamina value
-    public float staminaRegenRate = 1f; // Stamina points regenerated per second
+    [SerializeField] private float staminaRegenRate = 1f; // Stamina points regenerated per second
 
-    public float attackCost = 1f;
-    public float dodgeCost = 2f;
-    public float rollCost = 3f;
-    public float parryReward = 3f;  // Stamina refunded on successful parry
+    [SerializeField] private float attackCost = 1f;
+    [SerializeField] private float dodgeCost = 2f;
+    [SerializeField] private float rollCost = 3f;
+    [SerializeField] private float parryReward = 3f;  // Stamina refunded on successful parry
 
     void Start()
     {
         // Initialize current stamina to max stamina
-        currentStamina = maxStamina;
+        currentStamina = 0f;
+        Debug.Log("Stamina Initialized: " + currentStamina);
     }
 
     void Update()
     {
         // Regenerate stamina over time
         RegenerateStamina();
+        Debug.Log("Current Stamina: " + currentStamina); //would like to get it to ONLY show whole numbers, couldn't figure it out yet though.
+        // Update the slider value
+        UpdateStaminaSlider();
+    }
+    void UpdateStaminaSlider()
+    {
+        // Set the slider value to the current stamina
+        if (staminaSlider != null)
+        {
+            staminaSlider.value = currentStamina;
+        }
     }
 
     void RegenerateStamina()
@@ -31,6 +45,7 @@ public class PlayerStamina : MonoBehaviour
         {
             currentStamina += staminaRegenRate * Time.deltaTime;
             currentStamina = Mathf.Min(currentStamina, maxStamina); // Ensure it doesn't exceed max stamina
+            Debug.Log("Stamina Regenerated: " + currentStamina);
         }
     }
 
@@ -39,10 +54,12 @@ public class PlayerStamina : MonoBehaviour
         if (currentStamina >= amount)
         {
             currentStamina -= amount;
+            Debug.Log("Stamina Used: " + amount + ". Current Stamina: " + currentStamina);
             return true;  // Stamina was successfully used
         }
         else
         {
+            Debug.Log("Not Enough Stamina!");
             return false; // Not enough stamina
         }
     }
@@ -51,6 +68,7 @@ public class PlayerStamina : MonoBehaviour
     {
         currentStamina += amount;
         currentStamina = Mathf.Min(currentStamina, maxStamina); // Ensure it doesn't exceed max stamina
+        Debug.Log("Stamina Refunded: " + amount + ". Current Stamina: " + currentStamina);
     }
 
     // Methods to be called from other scripts
