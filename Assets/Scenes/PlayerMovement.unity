@@ -2202,6 +2202,7 @@ GameObject:
   - component: {fileID: 1849772297}
   - component: {fileID: 1849772299}
   - component: {fileID: 1849772300}
+  - component: {fileID: 1849772301}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2266,9 +2267,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1849772297}
+  animator: {fileID: 1849772300}
+  rollAnimationClip: {fileID: 0}
   speed: 5
   jumpForce: 4
-  animator: {fileID: 1849772300}
+  rollSpeed: 3
 --- !u!95 &1849772300
 Animator:
   serializedVersion: 5
@@ -2290,6 +2293,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1849772301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849772296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e8022d4cd4301438ff8602873185be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
