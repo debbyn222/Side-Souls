@@ -25,31 +25,28 @@ public class EnemyAI : MonoBehaviour
 
     private bool isFacingRight = false;
     //private Sensor_Bandit sensor;
-    //private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     void Awake()
     {
         intTimer = timer; //store intial value of timer
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inRange)
+        if (inRange && isFacingRight)
         {
-            if (isFacingRight)
-            {
-
-                hit = Physics2D.Raycast(rayCast.position, Vector2.right, rayCastLength, rayCastMask);
-                RaycastDebugger();
-            } 
-            else
-            {
-                hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, rayCastMask);
-                RaycastDebugger();
-            }
+            hit = Physics2D.Raycast(rayCast.position, Vector2.right, rayCastLength, rayCastMask);
+            RaycastDebugger();
         } 
+        else if (inRange && !isFacingRight)
+        {
+            hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, rayCastMask);
+            RaycastDebugger();
+        }
 
         //If the player is detected
         if (hit.collider != null)
@@ -110,16 +107,30 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("canWalk", true);
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
-            targetPosition = new Vector2(target.transform.position.x, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
+            //transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+            float directionOfTravel;
+            if (target.transform.position.x > transform.position.x)
+            {
+                directionOfTravel = 1;
+            } else
+            {
+                directionOfTravel = -1;
+            }
+            /*if (targetPosition.y > transform.position.y + 2)
+            {
+                Jump();
+            }*/
+            rb.velocity = new Vector2(speed*directionOfTravel, rb.velocity.y);
         }
     }
 
-    /*void Jump()
+    void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         animator.SetTrigger("Jump");
-    }*/
+    }
 
     void Attack ()
     {
