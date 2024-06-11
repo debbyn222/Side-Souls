@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D body;
+    public Animator animator;
+    public AnimationClip rollAnimationClip;
     public float speed = 5f;
     public float jumpForce = 2f;
+    public float rollSpeed = 3f;
     private bool isGrounded;
-    public Animator animator;
     private bool facingRight = true;
+    private bool isRolling = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (!isRolling)
+        { //prevent mocement input during roll
+            Move();
+        }
         CheckFalling();
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
@@ -115,6 +121,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Roll()
     {
+        isRolling = true;
         animator.SetTrigger("Roll");
+        float rollDirection = facingRight ? 1 : -1;
+        body.velocity = new Vector2(rollDirection * rollSpeed, body.velocity.y);
+        StartCoroutine(EndRoll(rollAnimationClip.length));
     }
+    IEnumerator EndRoll(float duration)
+    {
+        yield return new WaitForSeconds(duration); // Adjust duration based on roll animation length
+        isRolling = false;
+        // Ensure the player transitions back to the appropriate state
+        animator.SetInteger("AnimState", 0);
+    }
+
 }
