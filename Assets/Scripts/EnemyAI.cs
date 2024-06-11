@@ -10,10 +10,12 @@ public class EnemyAI : MonoBehaviour
     public float rayCastLength;
     public float attackDistance; //minimum distance to attack
     public float speed;
+    public float jumpForce;
     public float timer; //Timer for cooldown between attacks
 
     private RaycastHit2D hit;
     private GameObject target;
+    private Vector2 targetPosition;
     private Animator animator;
     private float distance; //distance between enemy and player
     private bool attackMode;
@@ -21,27 +23,37 @@ public class EnemyAI : MonoBehaviour
     private bool attackCooldown; //Check is enemy is still cooling down
     private float intTimer;
 
+    private bool isFacingRight = false;
+    //private Sensor_Bandit sensor;
+    private Rigidbody2D rb;
 
     void Awake()
     {
         intTimer = timer; //store intial value of timer
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inRange)
+        if (inRange && isFacingRight)
+        {
+            hit = Physics2D.Raycast(rayCast.position, Vector2.right, rayCastLength, rayCastMask);
+            RaycastDebugger();
+        } 
+        else if (inRange && !isFacingRight)
         {
             hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLength, rayCastMask);
             RaycastDebugger();
         }
 
         //If the player is detected
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
             EnemyLogic();
-        } else if (hit.collider == null)
+        } 
+        else if (hit.collider == null)
         {
             inRange = false;
         }
@@ -56,12 +68,18 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //if player collides with triggerarea then player is in range
+        //if player collides with trigger area then player is in range
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
+            targetPosition = new Vector2(target.transform.position.x, transform.position.y);
             inRange = true;
-            Debug.Log("Player in range");
+        }
+        //Check the position of the player relative to the enemy, if player is left and enemy is facing right flip and vice versa
+        if (targetPosition.x < transform.position.x && isFacingRight || targetPosition.x > transform.position.x && !isFacingRight)
+        {
+            Flip();
+            isFacingRight = !isFacingRight;
         }
     }
 
@@ -89,9 +107,29 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("canWalk", true);
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
-            Vector2 targetPosition = new Vector2(target.transform.position.x, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
+            //transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+            float directionOfTravel;
+            if (target.transform.position.x > transform.position.x)
+            {
+                directionOfTravel = 1;
+            } else
+            {
+                directionOfTravel = -1;
+            }
+            /*if (targetPosition.y > transform.position.y + 2)
+            {
+                Jump();
+            }*/
+            rb.velocity = new Vector2(speed*directionOfTravel, rb.velocity.y);
         }
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        animator.SetTrigger("Jump");
     }
 
     void Attack ()
@@ -130,11 +168,23 @@ public class EnemyAI : MonoBehaviour
     {
         if (distance > attackDistance)
         {
-            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.red);
+            if (isFacingRight) 
+                Debug.DrawRay(rayCast.position, Vector2.right * rayCastLength, Color.red);
+            else
+                Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.red);
         } else if (attackDistance > distance)
         {
-            Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.green);
+            if (isFacingRight)
+                Debug.DrawRay(rayCast.position, Vector2.right * rayCastLength, Color.green);
+            else
+                Debug.DrawRay(rayCast.position, Vector2.left * rayCastLength, Color.green);
         }
     }
 
+    void Flip()
+    {
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
+    }
 }
