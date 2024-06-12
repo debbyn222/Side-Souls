@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
     public float speed = 5f;
-    public float jumpForce = 2f;
+    public float jumpForce = 5f;
     public float rollSpeed = 3f;
     private bool isGrounded;
     private bool facingRight = true;
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Facing Right: " + facingRight);
         if (!isRolling)
         { //prevent mocement input during roll
             Move();
@@ -76,34 +77,6 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(body.velocity.x, jumpForce);
         animator.SetTrigger("Jump");
     }
-
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-    //         isGrounded = true;
-    //         animator.SetBool("Grounded", isGrounded);
-    //     }
-    // }
-
-    // void OnCollisionExit2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-    //         isGrounded = false;
-    //         animator.SetBool("Grounded", isGrounded);
-    //     }
-    // }
-
-    // void OnCollisionStay2D(Collision2D collision)
-    // {
-    //     // Ensure the player is grounded if staying on a surface
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-    //         isGrounded = true;
-    //         animator.SetBool("Grounded", isGrounded);
-    //     }
-    // }
 
     void Flip()
     {
