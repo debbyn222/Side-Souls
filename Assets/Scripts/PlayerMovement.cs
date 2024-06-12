@@ -7,8 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D body;
     public Animator animator;
     public AnimationClip rollAnimationClip;
+    private BoxCollider2D bodyCollider;
+    private BoxCollider2D feetCollider;
     public float speed = 5f;
-    public float jumpForce = 2f;
+    public float jumpForce = 5f;
     public float rollSpeed = 3f;
     private bool isGrounded;
     private bool facingRight = true;
@@ -17,16 +19,20 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        bodyCollider = GetComponent<BoxCollider2D>();
+        feetCollider = GetComponents<BoxCollider2D>()[1]; //second box collider on player
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Facing Right: " + facingRight);
         if (!isRolling)
         { //prevent mocement input during roll
             Move();
         }
+        CheckGrounded();
         CheckFalling();
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
@@ -72,34 +78,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetTrigger("Jump");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-            animator.SetBool("Grounded", isGrounded);
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-            animator.SetBool("Grounded", isGrounded);
-        }
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        // Ensure the player is grounded if staying on a surface
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-            animator.SetBool("Grounded", isGrounded);
-        }
-    }
-
     void Flip()
     {
         facingRight = !facingRight;
@@ -133,6 +111,13 @@ public class PlayerMovement : MonoBehaviour
         isRolling = false;
         // Ensure the player transitions back to the appropriate state
         animator.SetInteger("AnimState", 0);
+    }
+
+    void CheckGrounded()
+    {
+        isGrounded = feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        animator.SetBool("Grounded", isGrounded);
+        Debug.Log("Grounded: " + isGrounded);
     }
 
 }
