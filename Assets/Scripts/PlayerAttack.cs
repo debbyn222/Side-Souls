@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private GameObject attackArea = default;
+    public GameObject attackArea;
 
     private bool attacking = false;
 
@@ -14,13 +14,13 @@ public class PlayerAttack : MonoBehaviour
     
     void Start()
     {
-        attackArea = transform.GetChild(0).gameObject;
+       
     }
 
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.K))
         {
             Attack();
         }

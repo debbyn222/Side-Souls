@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerShield : MonoBehaviour
 {
-    private Collider2D shieldCollider;
+    public Collider2D shieldCollider;
     private Animator shieldAnimator;
-    public bool isActive = false;
-
+    private bool isActive = false;
+    
     void Start()
     {
-        shieldCollider = GetComponent<Collider2D>();
+        //shieldCollider = GetComponent<Collider2D>();
         shieldAnimator = GetComponent<Animator>();
         shieldCollider.enabled = false; 
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             if (!isActive)
             {
