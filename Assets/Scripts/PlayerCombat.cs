@@ -1,3 +1,13 @@
+//Author: Cesar R. Molina-Lopez
+//Date: 6/07/2024
+//Purpose: Placeholder combat script which interacts with Stamina script
+/*
+Placeholders include:
+    - Checking for incoming attack (trigger this with pressing "p" key)
+    - Checking for a simple player attack (trigger this with pressing "k" key)
+    - Committing player parry action (trigger this with pressing "o" key)
+*/
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +36,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
 {
-    // Simulate attack input using the "A" key
+    // Simulate attack input using the "K" key
     if (Input.GetKeyDown(KeyCode.K))
     {
         // Call the method to perform the attack action
@@ -41,12 +51,12 @@ public class PlayerCombat : MonoBehaviour
         parryWindowEnd = Time.time + parryWindow;
     }
 
-    // Parry input using a different key (e.g., "O") within the parry window
+    // Parry input using a different key ("O") within the parry window
     if (Input.GetKeyDown(KeyCode.O) && Time.time < parryWindowEnd)
     {
         if (canParry)
         {
-            Parry();
+            Parry(); //calls Parry funciton (update later)
         }
         else
         {

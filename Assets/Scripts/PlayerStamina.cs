@@ -1,3 +1,10 @@
+//Author: Cesar R. Molina-Lopez
+//Date: 6/08/2024
+//Purpose: Placeholder stamina script which interacts with combat script
+/*
+Placeholders include:
+    - 
+*/
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,16 +14,17 @@ public class PlayerStamina : MonoBehaviour
     public Slider staminaSlider; // Reference to the UI Slider for stamina
     [SerializeField] private float maxStamina = 15f;  // Maximum stamina value
     public float currentStamina;    // Current stamina value
-    [SerializeField] private float staminaRegenRate = 1f; // Stamina points regenerated per second
+    [SerializeField] private float staminaRegenRate = 1f; // Stamina points regenerated per second (want to update so it regenerates 1 full point once per second
+    //Right now, this updates 1 full point over the course of a second. Looks ugly.
 
-    [SerializeField] private float attackCost = 1f;
-    [SerializeField] private float dodgeCost = 2f;
-    [SerializeField] private float rollCost = 3f;
+    [SerializeField] private float attackCost = 1f; //only one that's added in PlayerCombat as placeholder
+    [SerializeField] private float dodgeCost = 2f; //not added in PlayerCombat as placeholder
+    [SerializeField] private float rollCost = 3f; //not added in PlayerCOmbat as placeholder
     [SerializeField] private float parryReward = 3f;  // Stamina refunded on successful parry
 
     void Start()
     {
-        // Initialize current stamina to max stamina
+        // Initialize current stamina to minimum stamina
         currentStamina = 0f;
         Debug.Log("Stamina Initialized: " + currentStamina);
     }
@@ -45,7 +53,7 @@ public class PlayerStamina : MonoBehaviour
         {
             currentStamina += staminaRegenRate * Time.deltaTime;
             currentStamina = Mathf.Min(currentStamina, maxStamina); // Ensure it doesn't exceed max stamina
-            Debug.Log("Stamina Regenerated: " + currentStamina);
+            //Debug.Log("Stamina Regenerated: " + currentStamina); (Unnecessary right now, maybe bring this back as a UI element)
         }
     }
 
