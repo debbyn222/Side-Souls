@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,15 +12,23 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D bodyCollider;
     private BoxCollider2D feetCollider;
     public BoxCollider2D shieldCollider;
+    public PhysicsMaterial2D frictionMaterial;
+    public TextMeshProUGUI interactText;
+    private int originaLayer;
+    private float originalGravityScale;
     public float speed = 5f;
     public float jumpForce = 5f;
     public float rollSpeed = 4f;
+    public float climbSpeed = 3f;
     private bool isGrounded;
     private bool facingRight = true;
     private bool isRolling = false;
-    private int originaLayer;
-    private float fallThroughDuration = 0.5f;
+    private float fallThroughDuration = 0.3f;
     private bool isOnPlatform;
+    private bool isOnGround;
+    private bool isOnStairs;
+    private bool isOnLadder;
+    private IInteractable currentInteractable;
 
 
     // Start is called before the first frame update
@@ -27,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         bodyCollider = GetComponent<BoxCollider2D>();
         feetCollider = GetComponents<BoxCollider2D>()[1]; //second box collider on player
+        interactText.gameObject.SetActive(false);
         originaLayer = gameObject.layer;
+        originalGravityScale = body.gravityScale;
+
     }
 
     // Update is called once per frame
@@ -53,6 +66,65 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(FallThroughPlatform());
         }
+        if(isOnLadder)
+        {
+            ClimbLadder();
+        }
+        else
+        {
+            body.gravityScale = originalGravityScale;
+        }
+
+        if(Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        {
+            currentInteractable.Interact(); //calls interact method in IInteractable interface that is implemented on every interactable object
+        }
+    }
+
+    //Utility Methods--------------------------------------------------------------------------------------
+    void CheckGrounded()
+    {
+        isOnPlatform = feetCollider.IsTouchingLayers(LayerMask.GetMask("Platform"));
+        isOnGround = feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        isOnStairs = feetCollider.IsTouchingLayers(LayerMask.GetMask("Stairs"));
+        isOnLadder = feetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")) || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+        if (isOnGround || isOnPlatform || isOnStairs)
+        {
+            isGrounded = true;
+            frictionMaterial.friction = isOnStairs ? 3 : 0; //increase friction when on stairs to stop sliding down
+        }
+        else
+        {
+            isGrounded = false;
+        }
+        animator.SetBool("Grounded", isGrounded);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            IInteractable interactable = other.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                currentInteractable = interactable;
+                interactText.gameObject.SetActive(true);
+                interactText.transform.position = other.transform.position + new Vector3(0, 1.5f, 0);
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Interactable"))
+        {
+            IInteractable interactable = other.GetComponent<IInteractable>();
+            if (interactable != null && currentInteractable == interactable)
+            {
+                currentInteractable = null;
+                interactText.gameObject.SetActive(false);
+            }
+        }
     }
 
 
@@ -61,6 +133,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float moveInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(moveInput * speed, body.velocity.y);
+
+
         //check if moving
         if (Mathf.Abs(moveInput) > 0.01f)
         {
@@ -127,20 +201,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetInteger("AnimState", 0);
     }
 
-    void CheckGrounded()
-    {
-        isOnPlatform = feetCollider.IsTouchingLayers(LayerMask.GetMask("Platform"));
-        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || isOnPlatform) 
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-        animator.SetBool("Grounded", isGrounded);
-        //Debug.Log("Grounded: " + isGrounded);
-    }
 
     IEnumerator FallThroughPlatform()
     {
@@ -158,7 +218,27 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(gameObject.layer, platformLayer, false);
         bodyCollider.enabled = true;
         feetCollider.enabled = true;
-        shieldCollider.enabled = true;
+        //shieldCollider.enabled = true;
+    }
+
+    void ClimbLadder()
+    {
+        body.gravityScale = 0;
+        if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") != 0)
+        {
+            body.velocity = new Vector2(body.velocity.x, climbSpeed);
+            //insert code to run climbing animation
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            body.velocity = new Vector2(body.velocity.x, -climbSpeed);
+            //insert code to run climbing animation
+        }
+        else//stopped climing but still on ladder
+        {
+            body.velocity = new Vector2(body.velocity.x, 0); // Stop moving when no key is pressed
+            //insert code to end climbing animation
+        }
     }
 
 }

@@ -640,9 +640,10 @@ MonoBehaviour:
   body: {fileID: 461840249}
   animator: {fileID: 461840248}
   rollAnimationClip: {fileID: 7400000, guid: 5118900a0fbea814ea3ffb8fada43696, type: 2}
-  speed: 5
-  jumpForce: 5
-  rollSpeed: 4
+  shieldCollider: {fileID: 0}
+  speed: 7
+  jumpForce: 7
+  rollSpeed: 6
 --- !u!61 &461840245
 BoxCollider2D:
   m_ObjectHideFlags: 0
