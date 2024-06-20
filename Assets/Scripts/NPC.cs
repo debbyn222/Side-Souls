@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
+    public string interactDescription;
+    public string InteractDescription
+    {
+        get => interactDescription;
+        set => interactDescription = value;
+    }
     public void Interact()
     {
         Debug.Log("Hello There");

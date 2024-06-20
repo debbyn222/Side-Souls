@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Player player;
     public Rigidbody2D body;
     public Animator animator;
     public AnimationClip rollAnimationClip;
@@ -16,10 +17,6 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI interactText;
     private int originaLayer;
     private float originalGravityScale;
-    public float speed = 5f;
-    public float jumpForce = 5f;
-    public float rollSpeed = 4f;
-    public float climbSpeed = 3f;
     private bool isGrounded;
     private bool facingRight = true;
     private bool isRolling = false;
@@ -29,11 +26,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isOnStairs;
     private bool isOnLadder;
     private IInteractable currentInteractable;
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        //player = new Player(); //sets default player properties
         animator = GetComponent<Animator>();
         bodyCollider = GetComponent<BoxCollider2D>();
         feetCollider = GetComponents<BoxCollider2D>()[1]; //second box collider on player
@@ -109,7 +107,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 currentInteractable = interactable;
                 interactText.gameObject.SetActive(true);
-                interactText.transform.position = other.transform.position + new Vector3(0, 1.5f, 0);
+
+                
+                SpriteRenderer spriteRenderer = other.GetComponent<SpriteRenderer>();
+                float spriteHeight = spriteRenderer.bounds.size.y;
+                Vector3 spriteTopPosition = spriteRenderer.bounds.center + new Vector3(0, spriteHeight / 2, 0);//spriteheight/2 + center = top of sprite
+                interactText.transform.position = spriteTopPosition + new Vector3(0, 0.3f, 0); //position text above object sprite
+                interactText.SetText("[E] " + interactable.InteractDescription);
             }
         }
     }
@@ -132,13 +136,14 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(moveInput * speed, body.velocity.y);
+        body.velocity = new Vector2(moveInput * player.speed, body.velocity.y);
 
 
         //check if moving
         if (Mathf.Abs(moveInput) > 0.01f)
         {
             animator.SetInteger("AnimState", 1);
+            animator.speed = player.speed/7f; //7 is default
             // Debug.Log("AnimState " + animator.GetInteger("AnimState"));
         }
         else
@@ -160,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, jumpForce);
+        body.velocity = new Vector2(body.velocity.x, player.jumpForce);
         animator.SetTrigger("Jump");
     }
 
@@ -188,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         isRolling = true;
         animator.SetTrigger("Roll");
         float rollDirection = facingRight ? 1 : -1;
-        body.velocity = new Vector2(rollDirection * rollSpeed, body.velocity.y);
+        body.velocity = new Vector2(rollDirection * player.rollSpeed, body.velocity.y);
         gameObject.layer = LayerMask.NameToLayer("RollingPlayer");//makes it possible to phase through enemeies when rolling
         StartCoroutine(EndRoll(rollAnimationClip.length));
     }
@@ -226,12 +231,12 @@ public class PlayerMovement : MonoBehaviour
         body.gravityScale = 0;
         if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") != 0)
         {
-            body.velocity = new Vector2(body.velocity.x, climbSpeed);
+            body.velocity = new Vector2(body.velocity.x, player.climbSpeed);
             //insert code to run climbing animation
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            body.velocity = new Vector2(body.velocity.x, -climbSpeed);
+            body.velocity = new Vector2(body.velocity.x, -player.climbSpeed);
             //insert code to run climbing animation
         }
         else//stopped climing but still on ladder
