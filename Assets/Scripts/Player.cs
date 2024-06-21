@@ -14,6 +14,7 @@ public class Player: MonoBehaviour
     public float healthPoints;
     public float maxStamina;
 
+    public Armor equippedArmor;
     private float originalSpeed;
     private float originalRollSpeed;
     private float originalClimbSpeed;
@@ -21,7 +22,7 @@ public class Player: MonoBehaviour
     private float originalHealthPoints;
     private float originalMaxStamina;
 
-    private Armor equippedArmor;
+    
 
     public Player() 
     {
@@ -78,10 +79,16 @@ public class Player: MonoBehaviour
         rollSpeed *= 1 + (armor.rollSpeedModifier / 100);
         climbSpeed *= 1 + (armor.climbSpeedModifier / 100);
         jumpForce *= 1 + (armor.jumpForceModifier / 100);
-        healthPoints *= 1 + (armor.healthPointsModifier / 100);
+        //healthPoints *= 1 + (armor.healthPointsModifier / 100);
+        healthPoints += armor.armorLevel * 20; //each piece of armor = 20 HP (change as neeeded)
         maxStamina *= 1 + (armor.maxStaminaModifier / 100);
 
         equippedArmor = armor;
+    }
+
+    public void printStats()
+    {
+        Debug.Log("Speed: " + speed + "\nRoll Speed: " + rollSpeed + "\nClimb Speed: " + climbSpeed + "\nJump Force: " + jumpForce + "\nHealth Points: " + healthPoints + "\nMax Stamina: " + maxStamina);
     }
 
 }
