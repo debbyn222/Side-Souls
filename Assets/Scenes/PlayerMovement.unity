@@ -1054,9 +1054,13 @@ MonoBehaviour:
   body: {fileID: 1849772297}
   animator: {fileID: 1849772300}
   rollAnimationClip: {fileID: 7400000, guid: 5118900a0fbea814ea3ffb8fada43696, type: 2}
+  shieldCollider: {fileID: 0}
+  frictionMaterial: {fileID: 0}
+  interactText: {fileID: 0}
   speed: 5
   jumpForce: 5
   rollSpeed: 4
+  climbSpeed: 3
 --- !u!1 &1887290457
 GameObject:
   m_ObjectHideFlags: 0
