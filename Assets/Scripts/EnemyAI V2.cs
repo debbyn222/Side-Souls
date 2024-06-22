@@ -19,6 +19,7 @@ public class EnemyAIv2 : MonoBehaviour
     public float attackRange;
     public float timeBetweenAttacks;
     private bool isFacingRight = false;
+    private float directionOfTravel;
 
     //Target information
     private GameObject target;
@@ -31,11 +32,10 @@ public class EnemyAIv2 : MonoBehaviour
     private bool inDetectionArea;
     private bool alreadyAttacked;
 
-    private float directionOfTravel;
+    //Patrolling
     public LayerMask isGround;
     private Vector2 walkPoint;
     private bool walkPointSet = false;
-
 
     // Start is called before the first frame update
     void Awake()
@@ -47,6 +47,7 @@ public class EnemyAIv2 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         //if player collides with detection area then it sets the player as the target
+        //Note: we can have a string targetTag; to have the target be whatever we want
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
@@ -57,32 +58,43 @@ public class EnemyAIv2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Creates a raycast with the direction of the player if they're in the detection area
         if (inDetectionArea)
         {
+            //If the player entered detection area start raycast towards to player direction to see if player is in line of sight
             targetDirection = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
             targetDirection.Normalize();
+            distanceFromTarget = Vector2.Distance(transform.position, target.transform.position);
 
-            hit = Physics2D.Raycast(rayCast.position, targetDirection, rayCastLength, rayCastMask);
+            hit = Physics2D.Raycast(rayCast.position, targetDirection, rayCastLength, ~rayCastMask);
             Debugger();
+
+            if (hit.collider.CompareTag("Player"))
+            {
+                EnemyLogic();
+            }
+            else
+            {
+                //Note: Can change later for an "AlertPatroling()" function from the player being close
+                //Have the enemy have a different animation and speed, either moving faster to search for the player or moving slower and acting more cautious
+                Patroling();
+            }
         }
-        //if (hit.collider.gameObject.tag == "Player")
-        if (hit.collider != null)
+        else
         {
-            EnemyLogic();
-        } 
-        //else if (hit.collider.gameObject.tag != "Player")
-        else if (hit.collider == null)
+            //If the player isnt in the detection area, start patroling
+            Patroling();
+        }
+        
+        //When the player gets out of the enemy's "line of sight" or further than rayCastLength, player is no longer in detection area
+        if (distanceFromTarget > rayCastLength)
         {
             inDetectionArea = false;
-            Patroling();
         }
         
     }
     
     void EnemyLogic()
     {            
-        distanceFromTarget = Vector2.Distance(transform.position, target.transform.position);
         if (!alreadyAttacked)
         {
             if (distanceFromTarget > attackRange)
@@ -151,9 +163,10 @@ public class EnemyAIv2 : MonoBehaviour
         rb.velocity = new Vector2(speed * directionOfTravel, rb.velocity.y);
     }
 
+    //
     void Attack()
     {   
-        //Make the enemy stop moving
+        //Make the enemy stop moving if ranged enemy
         //rb.velocity = new Vector2(0, rb.velocity.y);
 
         if (!alreadyAttacked)
