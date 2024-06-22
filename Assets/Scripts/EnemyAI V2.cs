@@ -29,8 +29,6 @@ public class EnemyAIv2 : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private bool inDetectionArea;
-    private bool inSightRange; //Seeing if the player is in sight 
-    private bool inAttackRange; //Seeing if the player is close enough to attack
     private bool alreadyAttacked;
 
     private float directionOfTravel;
@@ -56,11 +54,6 @@ public class EnemyAIv2 : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerExit2D(Collider2D collision)
-    {
-        inDetectionArea = false;
-    }*/
-
     // Update is called once per frame
     void Update()
     {
@@ -76,13 +69,11 @@ public class EnemyAIv2 : MonoBehaviour
         //if (hit.collider.gameObject.tag == "Player")
         if (hit.collider != null)
         {
-            inSightRange = true;
             EnemyLogic();
         } 
         //else if (hit.collider.gameObject.tag != "Player")
         else if (hit.collider == null)
         {
-            inSightRange = false;
             inDetectionArea = false;
             Patroling();
         }
@@ -92,16 +83,23 @@ public class EnemyAIv2 : MonoBehaviour
     void EnemyLogic()
     {            
         distanceFromTarget = Vector2.Distance(transform.position, target.transform.position);
-        if (distanceFromTarget > attackRange)
+        if (!alreadyAttacked)
         {
-            directionOfTravel = targetDirection.x;
-            Move();
+            if (distanceFromTarget > attackRange)
+            {
+                directionOfTravel = targetDirection.x;
+                Move();
+            }
+            else if (distanceFromTarget <= attackRange)
+            {
+                Attack();
+            }
         }
-        else if (distanceFromTarget <= attackRange)
+        else
         {
-            Attack();
+            animator.SetInteger("AnimState", 0);
         }
-
+  
     }
 
     void Patroling()
@@ -141,7 +139,7 @@ public class EnemyAIv2 : MonoBehaviour
     
     void Move()
     {
-        animator.SetBool("canWalk", true);
+        animator.SetInteger("AnimState", 1);
 
         //Make the enemy turn to the direction that its moving
         if (rb.velocity.x < 0 && isFacingRight || rb.velocity.x > 0 && !isFacingRight)
@@ -154,15 +152,13 @@ public class EnemyAIv2 : MonoBehaviour
     }
 
     void Attack()
-    {
-        animator.SetBool("Attack", true);
-        animator.SetBool("canWalk", false);
-
+    {   
         //Make the enemy stop moving
-        rb.velocity = new Vector2(0, rb.velocity.y);
+        //rb.velocity = new Vector2(0, rb.velocity.y);
 
         if (!alreadyAttacked)
         {
+            animator.SetTrigger("Attack");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -170,7 +166,6 @@ public class EnemyAIv2 : MonoBehaviour
 
     void ResetAttack()
     {
-        animator.SetBool("Attack", false);
         alreadyAttacked = false;
     }
 
