@@ -11,6 +11,7 @@ public class EnemyAIv2 : MonoBehaviour
     public Transform rayCast;
     public LayerMask rayCastMask;
     public float rayCastLength; 
+    private RaycastHit2D hit;
 
     //Enemy Attributes
     public float speed;
@@ -19,11 +20,12 @@ public class EnemyAIv2 : MonoBehaviour
     public float timeBetweenAttacks;
     private bool isFacingRight = false;
 
+    //Target information
     private GameObject target;
     private Vector2 targetDirection;
     private float distanceFromTarget;
 
-    private RaycastHit2D hit;
+    //Enemy components and states
     private Rigidbody2D rb;
     private Animator animator;
     private bool inDetectionArea;
@@ -41,12 +43,12 @@ public class EnemyAIv2 : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //if player collides with trigger area then player is in range
+        //if player collides with detection area then it sets the player as the target
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
@@ -54,9 +56,15 @@ public class EnemyAIv2 : MonoBehaviour
         }
     }
 
+    /*private void OnTriggerExit2D(Collider2D collision)
+    {
+        inDetectionArea = false;
+    }*/
+
     // Update is called once per frame
     void Update()
     {
+        //Creates a raycast with the direction of the player if they're in the detection area
         if (inDetectionArea)
         {
             targetDirection = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
@@ -65,11 +73,13 @@ public class EnemyAIv2 : MonoBehaviour
             hit = Physics2D.Raycast(rayCast.position, targetDirection, rayCastLength, rayCastMask);
             Debugger();
         }
+        //if (hit.collider.gameObject.tag == "Player")
         if (hit.collider != null)
         {
             inSightRange = true;
             EnemyLogic();
         } 
+        //else if (hit.collider.gameObject.tag != "Player")
         else if (hit.collider == null)
         {
             inSightRange = false;
@@ -92,16 +102,12 @@ public class EnemyAIv2 : MonoBehaviour
             Attack();
         }
 
-        
     }
 
     void Patroling()
     {
         if (!walkPointSet)
-        {
-            SearchWalkPoint();
-        }
-            
+            SearchWalkPoint();       
         
         if (walkPointSet)
         {
@@ -136,11 +142,14 @@ public class EnemyAIv2 : MonoBehaviour
     void Move()
     {
         animator.SetBool("canWalk", true);
+
+        //Make the enemy turn to the direction that its moving
         if (rb.velocity.x < 0 && isFacingRight || rb.velocity.x > 0 && !isFacingRight)
         {
             Flip();
             isFacingRight = !isFacingRight;
         }
+
         rb.velocity = new Vector2(speed * directionOfTravel, rb.velocity.y);
     }
 
@@ -148,10 +157,20 @@ public class EnemyAIv2 : MonoBehaviour
     {
         animator.SetBool("Attack", true);
         animator.SetBool("canWalk", false);
+
+        //Make the enemy stop moving
+        rb.velocity = new Vector2(0, rb.velocity.y);
+
+        if (!alreadyAttacked)
+        {
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
     }
 
     void ResetAttack()
     {
+        animator.SetBool("Attack", false);
         alreadyAttacked = false;
     }
 
