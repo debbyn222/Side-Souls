@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyAIv2 : MonoBehaviour
+public class EnemyAI_V2 : MonoBehaviour
 {
     //Used for line of sight checks 
     public Transform rayCast;
@@ -19,7 +20,6 @@ public class EnemyAIv2 : MonoBehaviour
     public float attackRange;
     public float timeBetweenAttacks;
     private bool isFacingRight = false;
-    private float directionOfTravel;
 
     //Target information
     private GameObject target;
@@ -31,6 +31,7 @@ public class EnemyAIv2 : MonoBehaviour
     private Animator animator;
     private bool inDetectionArea;
     private bool alreadyAttacked;
+    private bool isPatrolling;
 
     //Patrolling
     public LayerMask isGround;
@@ -61,28 +62,30 @@ public class EnemyAIv2 : MonoBehaviour
         if (inDetectionArea)
         {
             //If the player entered detection area start raycast towards to player direction to see if player is in line of sight
-            targetDirection = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
-            targetDirection.Normalize();
-            distanceFromTarget = Vector2.Distance(transform.position, target.transform.position);
-
-            hit = Physics2D.Raycast(rayCast.position, targetDirection, rayCastLength, ~rayCastMask);
+            CheckLineOfSight();
             Debugger();
 
             if (hit.collider.CompareTag("Player"))
             {
                 EnemyLogic();
+                isPatrolling = false;
             }
             else
             {
                 //Note: Can change later for an "AlertPatroling()" function from the player being close
                 //Have the enemy have a different animation and speed, either moving faster to search for the player or moving slower and acting more cautious
                 Patroling();
+                isPatrolling = true;
             }
         }
         else
         {
             //If the player isnt in the detection area, start patroling
-            Patroling();
+            if (!alreadyAttacked)
+            {
+                Patroling();
+                isPatrolling = true;
+            }
         }
         
         //When the player gets out of the enemy's "line of sight" or further than rayCastLength, player is no longer in detection area
@@ -92,6 +95,14 @@ public class EnemyAIv2 : MonoBehaviour
         }
         
     }
+
+    void CheckLineOfSight()
+    {
+        targetDirection = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+        targetDirection.Normalize();
+        distanceFromTarget = Vector2.Distance(transform.position, target.transform.position);
+        hit = Physics2D.Raycast(rayCast.position, targetDirection, rayCastLength, ~rayCastMask);
+    }
     
     void EnemyLogic()
     {            
@@ -99,8 +110,7 @@ public class EnemyAIv2 : MonoBehaviour
         {
             if (distanceFromTarget > attackRange)
             {
-                directionOfTravel = targetDirection.x;
-                Move();
+                Move(speed, targetDirection.x);
             }
             else if (distanceFromTarget <= attackRange)
             {
@@ -116,16 +126,22 @@ public class EnemyAIv2 : MonoBehaviour
 
     void Patroling()
     {
+        float patrolSpeed = speed/3;
+
+        if (isPatrolling)
+            animator.SetFloat("AnimRunSpeed", 0.3f);
+        else
+            animator.SetFloat("AnimRunSpeed", 1f);
+
         if (!walkPointSet)
-            SearchWalkPoint();       
+            SearchWalkPoint();
         
         if (walkPointSet)
         {
             if (walkPoint.x < transform.position.x)
-                directionOfTravel = -1;
+                Move(patrolSpeed, -1);
             else 
-                directionOfTravel = 1;
-            Move();
+                Move(patrolSpeed, 1);
         }
 
         Vector2 distanceToWalkPoint = (Vector2)transform.position - walkPoint;
@@ -149,7 +165,7 @@ public class EnemyAIv2 : MonoBehaviour
 
     }
     
-    void Move()
+    void Move(float moveSpeed, float directionOfTravel)
     {
         animator.SetInteger("AnimState", 1);
 
@@ -157,13 +173,12 @@ public class EnemyAIv2 : MonoBehaviour
         if (rb.velocity.x < 0 && isFacingRight || rb.velocity.x > 0 && !isFacingRight)
         {
             Flip();
-            isFacingRight = !isFacingRight;
         }
 
-        rb.velocity = new Vector2(speed * directionOfTravel, rb.velocity.y);
+        rb.velocity = new Vector2(moveSpeed * directionOfTravel, rb.velocity.y);
     }
 
-    //
+
     void Attack()
     {   
         //Make the enemy stop moving if ranged enemy
@@ -184,6 +199,8 @@ public class EnemyAIv2 : MonoBehaviour
 
     void Flip()
     {
+        isFacingRight = !isFacingRight;
+
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
