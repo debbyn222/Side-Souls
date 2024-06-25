@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -13,14 +14,14 @@ public class Player: MonoBehaviour
     public float jumpForce;
     public float healthPoints;
     public float maxStamina;
-
     public Armor equippedArmor;
-    private float originalSpeed;
-    private float originalRollSpeed;
-    private float originalClimbSpeed;
-    private float originalJumpForce;
-    private float originalHealthPoints;
-    private float originalMaxStamina;
+
+    [NonSerialized] public float originalSpeed;
+    [NonSerialized] public float originalRollSpeed;
+    [NonSerialized] public float originalClimbSpeed;
+    [NonSerialized] public float originalJumpForce;
+    [NonSerialized] public float originalHealthPoints;
+    [NonSerialized] public float originalMaxStamina;
 
     
 
