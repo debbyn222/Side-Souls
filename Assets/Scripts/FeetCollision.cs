@@ -10,13 +10,15 @@ public class FeetCollision : MonoBehaviour
     private BoxCollider2D feetCollider;
     private BoxCollider2D bodyCollider;
     private BoxCollider2D shieldCollider;
+    private Player player;
     [NonSerialized] public bool isGrounded;
     [NonSerialized] public bool isOnPlatform;
     [NonSerialized] public bool isOnGround;
     [NonSerialized] public bool isOnStairs;
     [NonSerialized] public bool isOnLadder;
+    private bool isOnSpikes = false; //bool to prevent multiple coroutine calls
     public float platformFallThroughDuration = 0.3f;
-
+    
 
     private void Start()
     {
@@ -26,13 +28,24 @@ public class FeetCollision : MonoBehaviour
         animator = GetComponentInParent<Animator>();
         gameData = GetComponentInParent<PlayerMovement>().gameData;
         gameData.Initialize();
+        player = gameData.player;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Water"))
         {
-            gameData.player.speed = gameData.player.originalSpeed * 0.5f;
+           player.speed = player.originalSpeed * 0.6f;
+        }
+
+    }
+
+    
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spikes") && !isOnSpikes)
+        {
+            StartCoroutine(TakeDamageOverTime());
         }
     }
 
@@ -61,6 +74,26 @@ public class FeetCollision : MonoBehaviour
             isGrounded = false;
         }
         animator.SetBool("Grounded", isGrounded);
+    }
+
+    private IEnumerator TakeDamageOverTime()
+    {
+        isOnSpikes = true; 
+        while (true) // Loop to continuously check for damage
+        {
+
+            player.healthPoints = player.healthPoints - 10; // Tweak if needed
+            //player.printStats();
+
+            yield return new WaitForSeconds(1.5f); // Delay between health reductions
+
+            // Check if the player is still in contact with the spikes
+            if (!feetCollider.IsTouching(GameObject.FindWithTag("Spikes").GetComponent<Collider2D>()))
+            {
+                isOnSpikes = false;
+                yield break;
+            }
+        }
     }
 
     public IEnumerator FallThroughPlatform()
