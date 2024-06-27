@@ -1,61 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class EnemyAI_V2 : MonoBehaviour
+public class EnemyController_Ranged : MonoBehaviour 
 {
-    //Used for line of sight checks 
-    public Transform rayCast;
-    public LayerMask rayCastMask;
-    public float rayCastLength; 
-    private RaycastHit2D hit;
+    EnemyDetector enemyDetector;
 
-    //Enemy Attributes
+    //TODO: Replace Enemy Attributes with a separate script
+    [Header("Enemy Attributes")]
     public float speed;
     public float jumpForce;
     public float attackRange;
     public float timeBetweenAttacks;
-    private bool isFacingRight = false;
-
-    //Target information
-    private GameObject target;
-    private string targetTag = "Player";
-    private Vector2 targetDirection;
-    private float distanceFromTarget;
+    public bool isFacingRight = false;
 
     //Enemy components and states
+    [Header("Enemy Components")]
     private Rigidbody2D rb;
     private Animator animator;
-    private bool inDetectionArea;
-    private bool alreadyAttacked;
+    [SerializeField] private bool alreadyAttacked;
+    public GameObject projectile;
+    public Transform projectileLaunchPoint;
 
     //Patrolling
     public LayerMask isGround;
     private Vector2 walkPoint;
     private bool walkPointSet = false;
 
-    // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        enemyDetector = GetComponentInChildren<EnemyDetector>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if player collides with detection area then it sets the player as the target
-        if (collision.gameObject.tag == targetTag)
-        {
-            target = collision.gameObject;
-            inDetectionArea = true;
-        }
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (inDetectionArea)
-        { 
+        if (enemyDetector.inDetectionArea)
+        {
             //Starts by checking if the enemy has line of sight
-            if (CheckLineOfSight())
+            if (enemyDetector.PlayerInSight())
             {
                 EnemyLogic();
             }
@@ -75,40 +60,19 @@ public class EnemyAI_V2 : MonoBehaviour
                 Patroling();
             }
         }
-        
-        //When the player gets out of the enemy's "line of sight" or further than rayCastLength, player is no longer in detection area
-        if (distanceFromTarget > rayCastLength)
-        {
-            inDetectionArea = false;
-        }
-        
     }
 
-    //Makes a line of sight check from the enemy's rayCast child object towards the target and checks if the target is in sight
-    bool CheckLineOfSight()
-    {
-        targetDirection = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
-        targetDirection.Normalize();
-        distanceFromTarget = Vector2.Distance(transform.position, target.transform.position);
-        hit = Physics2D.Raycast(rayCast.position, targetDirection, rayCastLength, ~rayCastMask);
-
-        if (hit.collider.CompareTag(targetTag))
-            return true;
-        else 
-            return false;
-    }
-    
     void EnemyLogic()
     {
         animator.SetFloat("AnimRunSpeed", 1f);
 
         if (!alreadyAttacked)
         {
-            if (distanceFromTarget > attackRange)
+            if (enemyDetector.distanceFromTarget > attackRange)
             {
-                Move(speed, targetDirection.x);
+                Move(speed, enemyDetector.targetDirection.x);
             }
-            else if (distanceFromTarget <= attackRange)
+            else if (enemyDetector.distanceFromTarget <= attackRange)
             {
                 Attack();
             }
@@ -121,17 +85,17 @@ public class EnemyAI_V2 : MonoBehaviour
 
     void Patroling()
     {
-        float patrolSpeed = speed/3;
-        animator.SetFloat("AnimRunSpeed", 0.3f);    
+        float patrolSpeed = speed / 3;
+        animator.SetFloat("AnimRunSpeed", 0.3f);
 
         if (!walkPointSet)
             SearchWalkPoint();
-        
+
         if (walkPointSet)
         {
             if (walkPoint.x < transform.position.x)
                 Move(patrolSpeed, -1);
-            else 
+            else
                 Move(patrolSpeed, 1);
         }
 
@@ -155,7 +119,7 @@ public class EnemyAI_V2 : MonoBehaviour
             walkPointSet = true;
 
     }
-    
+
     void Move(float moveSpeed, float directionOfTravel)
     {
         animator.SetInteger("AnimState", 1);
@@ -171,14 +135,17 @@ public class EnemyAI_V2 : MonoBehaviour
 
 
     void Attack()
-    {   
-        //Make the enemy stop moving if ranged enemy
-        //rb.velocity = new Vector2(0, rb.velocity.y);
-
+    {
         if (!alreadyAttacked)
         {
             animator.SetTrigger("Attack");
+            LookAtTarget();
             alreadyAttacked = true;
+
+            projectileLaunchPoint.transform.right = enemyDetector.targetDirection;
+
+            Instantiate(projectile, projectileLaunchPoint.position, projectileLaunchPoint.rotation);
+
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
@@ -197,12 +164,17 @@ public class EnemyAI_V2 : MonoBehaviour
         transform.localScale = scaler;
     }
 
-    void Debugger()
+    void LookAtTarget()
     {
-        if (inDetectionArea && distanceFromTarget > attackRange)
-            Debug.DrawRay(rayCast.position, targetDirection * rayCastLength, Color.red);
-        else if (inDetectionArea && distanceFromTarget <= attackRange)
-            Debug.DrawRay(rayCast.position, targetDirection * rayCastLength, Color.green);
+        if (enemyDetector.target.transform.position.x < transform.position.x && isFacingRight || enemyDetector.target.transform.position.x > transform.position.x && !isFacingRight)
+            Flip();
     }
 
+    void Debugger()
+    {
+        if (enemyDetector.inDetectionArea && enemyDetector.distanceFromTarget > attackRange)
+            Debug.DrawRay(enemyDetector.rayCast.position, enemyDetector.targetDirection * enemyDetector.rayCastLength, Color.red);
+        else if (enemyDetector.inDetectionArea && enemyDetector.distanceFromTarget <= attackRange)
+            Debug.DrawRay(enemyDetector.rayCast.position, enemyDetector.targetDirection * enemyDetector.rayCastLength, Color.green);
+    }
 }
