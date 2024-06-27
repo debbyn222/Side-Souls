@@ -33,7 +33,7 @@ public class ArmorBar : MonoBehaviour
             }
         }
 
-        Debug.Log("Number of armor slots: " + armorSlots.Count);
+        //Debug.Log("Number of armor slots: " + armorSlots.Count);
     }
 
     public void UpdateArmorBar(int armorLevel)
