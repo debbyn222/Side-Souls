@@ -82,10 +82,10 @@ public class FeetCollision : MonoBehaviour
         while (true) // Loop to continuously check for damage
         {
 
-            player.healthPoints = player.healthPoints - 10; // Tweak if needed
+            player.healthPoints = player.healthPoints - 20; // Tweak if needed
             //player.printStats();
 
-            yield return new WaitForSeconds(1.5f); // Delay between health reductions
+            yield return new WaitForSeconds(1.2f); // Delay between health reductions
 
             // Check if the player is still in contact with the spikes
             if (!feetCollider.IsTouching(GameObject.FindWithTag("Spikes").GetComponent<Collider2D>()))

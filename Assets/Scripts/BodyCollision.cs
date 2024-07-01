@@ -6,11 +6,12 @@ using UnityEngine;
 public class BodyCollision : MonoBehaviour
 {
     private IInteractable currentInteractable;
-    public TextMeshProUGUI interactText;
+    private TextMeshProUGUI interactText;
     public BoxCollider2D bodyCollider;
 
     private void Start()
     {
+        interactText = GameObject.Find("InteractText").GetComponent<TextMeshProUGUI>();
         interactText.gameObject.SetActive(false);
         bodyCollider = GetComponent<BoxCollider2D>();
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Player: MonoBehaviour
+public class Player : MonoBehaviour
 {
     public string playerName;
 
@@ -22,10 +22,11 @@ public class Player: MonoBehaviour
     [NonSerialized] public float originalJumpForce;
     [NonSerialized] public float originalHealthPoints;
     [NonSerialized] public float originalMaxStamina;
+    [NonSerialized] public bool isDead = false;
 
-    
 
-    public Player() 
+
+    public Player()
     {
         // default values
         playerName = "john";
@@ -42,8 +43,8 @@ public class Player: MonoBehaviour
         originalJumpForce = jumpForce;
         originalHealthPoints = healthPoints;
         originalMaxStamina = maxStamina;
-}
-     public Player(string name, float speed, float rollSpeed, float climbSpeed, float jumpForce, float healthPoints, float maxStamina)
+    }
+    public Player(string name, float speed, float rollSpeed, float climbSpeed, float jumpForce, float healthPoints, float maxStamina)
     {
         this.playerName = name;
         this.speed = speed;
@@ -61,10 +62,15 @@ public class Player: MonoBehaviour
         originalMaxStamina = maxStamina;
     }
 
+    void Update()
+    {
+        DeathHandler(); //check if player has died
+    }
+
     public void EquipArmor(Armor armor)
     {
 
-        if(equippedArmor != null)
+        if (equippedArmor != null)
         {
             //remove effects of currently equipped armor
             speed = originalSpeed;
@@ -85,6 +91,20 @@ public class Player: MonoBehaviour
         maxStamina *= 1 + (armor.maxStaminaModifier / 100);
 
         equippedArmor = armor;
+    }
+
+    void DeathHandler()
+    {
+        if (this.healthPoints <= 0 && !isDead)
+        {
+
+            //insert code to display death screen and run any other on death actions
+
+
+            isDead = true;
+            Debug.Log("Player Died");
+
+        }
     }
 
     public void printStats()
