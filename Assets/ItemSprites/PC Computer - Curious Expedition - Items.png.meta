@@ -1,0 +1,3876 @@
+fileFormatVersion: 2
+guid: c72ddd6fc1cc84a6bbf042292cfb4406
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 733
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17ad7746f60747b2b2a78dcbbb3f74c
+      internalID: 1887967238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 736
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c72add2e0cf4767a548de212f656cc
+      internalID: 1735583880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 717
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d853a980cc2d47799cae88fc83a715c
+      internalID: -741323967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 736
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0d0091abb0f4f019c8fb37d3a06dfa
+      internalID: -606448594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 722
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4defda7cee0f46869c413ea669c7803
+      internalID: -697705989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 711
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89aac0d34b08400caa0e7f3b7f315cc
+      internalID: 410521159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_6
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 704
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1987eeeceb3524725b3bc1c887618dcc
+      internalID: 1127881458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 700
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98198c92dc9a48688a71d829a90bace
+      internalID: 1671574337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 690
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28046d25682ce41fbb1b0e0c54d5d160
+      internalID: 741261614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 683
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f7b96bf79da447da6cb421e5ddac1b
+      internalID: -1930613110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 702
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75a92048b1384beb8617992ee30da56
+      internalID: 1472874010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 667
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6c9406048f0421fbbb6c4418abab30
+      internalID: 1613653257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_12
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 683
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93545de2da8084b25b1c870321e83ebc
+      internalID: -1743957141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_13
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 649
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ac311d5270346fa9b7b6343e4e9b07
+      internalID: -1697160246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_14
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 664
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5208e79d09874d89974f6ed9ce33eda
+      internalID: 823348894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 664
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debd7bebfbd734af48bfd1b13beabd82
+      internalID: -460695487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_16
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 663
+        width: 5
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57b0d11aded44e6fbdbc1236a296e59
+      internalID: 1180507134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20dadba1c3d954c26ac0a54c1bf67afc
+      internalID: -2041257703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_18
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 627
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58bbaf13f56c943e499d29e834cb63b8
+      internalID: 649008041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_19
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 645
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8392bd6082241cc890db26b36218ce
+      internalID: -1737604007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 645
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e69229769474188b778f1711b1b4a3
+      internalID: -1966750650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_21
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 643
+        width: 5
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27ab798b168344acb0a3f7d9072696d
+      internalID: 101344914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_22
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 627
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7637d7b57ea4cbe82ebb295b0bdb7e
+      internalID: -1986625725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_23
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 627
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b35a9768c0b42c38e076623331538c
+      internalID: 458582217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_24
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 623
+        width: 5
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb29c2827c05f403898a673177c3acd3
+      internalID: 1168989574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 606
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fed5cd816ac940c090f2fb9ede826e3
+      internalID: 922055789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_26
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 608
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d916d80023c7b44f3825767ea677a931
+      internalID: 466891062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_27
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 613
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8ed9fc2dd7a4634a9224504b7b6193
+      internalID: -546100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_28
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 604
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4a7d87c434d45d69945d8ba0a48a7b
+      internalID: 759335288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2407dfedf44b47a580cbfc3d4534046
+      internalID: -566679574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_30
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 593
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ec1fbfc72ae471bb82f5183fb7cf0a
+      internalID: 1722590483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_31
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 591
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af8650ef21d34c56916739d328cc3bb
+      internalID: -182026231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_32
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 601
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5352ff60456743ed9b0d38ad8aec649
+      internalID: 74114299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_33
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 572
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17378a6edd0be47c9b2a2634550b9339
+      internalID: 1699446736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_34
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 585
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84fbdaeaefa004add9930870239ad5ff
+      internalID: -2051638443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 565
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105bd69a86b84459094add6e0cf8ae46
+      internalID: -775355971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_36
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 553
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb63fe76afec47068972bfc56ee10ec
+      internalID: 1826595804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_37
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 566
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0e445dd3d8d4de29b8fc89182eaade
+      internalID: 1303419107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_38
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 565
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07562c430e604e22b97e4d45ea47e1e
+      internalID: 2051518383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 545
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e105d055d6c8406e87c2408212fe39e
+      internalID: 1303654384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_40
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 552
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f140cf326d87425a9b91375dd426035
+      internalID: 1135939255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_41
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 545
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba3aac284b0b46c58a97a9e48ffad57
+      internalID: -512452234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39c951faa1da40bbab180904a434306
+      internalID: -2015775853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_43
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 534
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bfcef9029514198a663e6e8142d9c4
+      internalID: 211317167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_44
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 533
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfddf05082d343278299962dd0aff9f
+      internalID: -1247988178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 503
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aeed5c5c22f349f0860d36050541bee
+      internalID: -1471221338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_46
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 515
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8340d3fc7e9934085afa85f503525bb1
+      internalID: 262178862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_47
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 514
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de82f535ef1f04e9193f5e2bb1aec015
+      internalID: 507802441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_48
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 513
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be70625741ab24aa5a3ab48d667fea73
+      internalID: 1746385716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 482
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e6b8071d1ea447c9f23213f713afe5
+      internalID: 1348995354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_50
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 496
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0082e1cb5dedb4edc884a79a0291ca91
+      internalID: 794046361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_51
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 495
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118c996e5e7a8403a86b8bcd79b4c2a1
+      internalID: -1525193155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_52
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 495
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b5fd4e4ed3c4d73b4db26ba8cff655
+      internalID: -878201539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 461
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189319e4f5bf04ede95603facc00e8a1
+      internalID: -855117848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_54
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 477
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578074b6a8ae243e1aa4a9f0fcfba756
+      internalID: 1242675401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_55
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 478
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e8563cb4c5b4f35aead0ab995d892e
+      internalID: -1148789211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_56
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 458
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edda5aca9150439ab8bea19a85272be
+      internalID: 1074042636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_57
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 461
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644bbe9c8d47146a3badc874c5b3a933
+      internalID: -1242108459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0d881669c874868915004f61d1b21b
+      internalID: -884735094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_59
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 439
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a1aa0b563ff4388847b3637a712e71
+      internalID: -767642593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_60
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 445
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724b1c595c4544bb0919b8c95f5db32e
+      internalID: -1501255861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_61
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 419
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10a45fc2cf524f86809bde94ab00710
+      internalID: 2008012673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_62
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 420
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88945483eaf7147e38c13c1b09eca9a9
+      internalID: -740556103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_63
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 429
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79926c42f334f45e2b66a71f5fb9b2a2
+      internalID: -874309429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_64
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 411
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a642d31ed67d4c3dba3ceb4fa0d652f
+      internalID: 1791767223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_65
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 421
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332dc0d43105a4b97b0d3869b1c1fd05
+      internalID: 44467772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_66
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 408
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb4cb3eb05b747b283890e5f3daa088
+      internalID: -2047152645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03365c33dc74e4e5d91b1a5101452429
+      internalID: -896548188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_68
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 401
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbd8228d277b494c9d5723bdbae7c43
+      internalID: 1521959709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_69
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 394
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b9ec41333eb44f688af7f39a6087e0
+      internalID: -64470642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_70
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 387
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ef5a60f27cb4319b28442777303d34
+      internalID: 1541562806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 379
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c09045dbe82426795a482819e44dd3
+      internalID: 588775500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_72
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 382
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9988f66b6ddc47ecbb6f4dd98c32f36
+      internalID: -165826383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_73
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 377
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73bcf266a7f524a38994bc7a7ef69ab7
+      internalID: -1792938938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_74
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 366
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab5488b928e54e7db0c2671e9dda86f
+      internalID: -1577129508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 359
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388726e38632f43ab92961cb748aac06
+      internalID: 1279067519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_76
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 364
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1ae593097f149aca5b9ace52ad566a
+      internalID: -1191301405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_77
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 366
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b1c613d487041dc88df2d6840a3b7f
+      internalID: 1506081509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de42d64b3f9a6453487922deb8c2e9ab
+      internalID: 1438166709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_79
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 345
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eff4c57fbc4b44f3a9b89f945916f01
+      internalID: -2063126785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_80
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 352
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d47040da91b47b48949337a3a525de
+      internalID: 614656930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9544a090ec24c2881428fd3bddd812
+      internalID: -370034506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_82
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 324
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fccfc0288194ed28f983b24c12a75f
+      internalID: -356646881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_83
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 332
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b47f432aa1d4d529ef17b94e57445b
+      internalID: -335048156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_84
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 332
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9123b2db904474269bbb73cfa7cb8d5d
+      internalID: -1907556773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235671f9777d04f839b793093d4b4c8d
+      internalID: -1261018223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_86
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 303
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a0491f92bbe4ed4b61229244101ab4
+      internalID: 182095868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_87
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 313
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa568f6d120b84111a859c32d1ba88ac
+      internalID: 314787283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_88
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 312
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113d882d3834e4d29a819d5a970d2599
+      internalID: -803810086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 281
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a79e25d4c44b4af782efffa8a22fd96
+      internalID: 1115960844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_90
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 291
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be99582dfe944e098779881db59dfea
+      internalID: -1408691555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_91
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 296
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb37b99e91f1491787256f02162c2a7
+      internalID: -1831990224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_92
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 293
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc7781de74774edebe42a38eda19b88
+      internalID: 332604140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_93
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3148be067cf94a939236b24200bd4bb
+      internalID: -266106759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_94
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 270
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a2cf7cdd72948aea1c4fb9a488a265
+      internalID: 184295223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_95
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 279
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24168204bbde45d9b025e9916a1d343
+      internalID: -2096464378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_96
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 274
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d72f07d55c984fc1a9029bdadf63502
+      internalID: -1831223611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_97
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 249
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb4b36049664492babe0ac4dcffd060
+      internalID: 756521284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_98
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 261
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234d9197a588641379e7c198c8d8b686
+      internalID: -521166249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_99
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 267
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10efdc1a45d9248a9a9abc9008c255fc
+      internalID: 1849089980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_100
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 262
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a77779e95b51409ab3e902c71336f74
+      internalID: -1276866646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_101
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 243
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107f3b1d25faf4a48a1ae587a233ec39
+      internalID: -1781532523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_102
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 260
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aecde905c17e4ecf921c4b6d6ef97a9
+      internalID: -1250365539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_103
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 257
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d6014c8775b4d4eb4a9890cf8ea6da
+      internalID: -1138448936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_104
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 229
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8635320b38a1846fdb02e4527c7773b0
+      internalID: 1427874573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_105
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 243
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a4638c3f5e945f1b6214e8588ba7f1
+      internalID: -871836839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_106
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 243
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f81635966cc643929bf04f32d77f638
+      internalID: -81933149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_107
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 241
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc42ab11279a4544806d99b7863432f
+      internalID: 1804665141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c881e7f61ba3486d8ddf8f527a07902
+      internalID: 1788627651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_109
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 226
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0f6f78a79e842f482cb17c5768bae0
+      internalID: 1823681860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_110
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 228
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc513937dd30c4f669563d84a8d10010
+      internalID: -934235194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d451e313b3247489db83e15fa3c86f
+      internalID: -125127028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_112
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 203
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c37bfbc61c34273b098a35a9b6bb3c
+      internalID: 540834080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_113
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 212
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97fa2321c2264c17943e3faebb73c9a
+      internalID: -776814728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_114
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 211
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8de983c6802d4cc99a797f83357849e
+      internalID: 714978298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b570f69d1a246d1aeb8e94030b4e53
+      internalID: -67939698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_116
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 183
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3abdf9eb117964bb2ba2f04fb5d45b87
+      internalID: -1040917209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_117
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 195
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27b75f61c9634ec39f2a152cbd1e677
+      internalID: 2095485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_118
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 196
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98c9f2b59dea4ad8b69161d972762f9
+      internalID: -734082566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50302dc4f52c14d54b6f0323993c749a
+      internalID: -1042895725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_120
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 183
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8613d6e21e3014a15bf1c53eb1744c49
+      internalID: 1361944379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_121
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 184
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0752c6bc1f72147feb404462fc801805
+      internalID: -373423208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_122
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 164
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ad8a3c02c0e4a14be0ebf996fd3e9a
+      internalID: 1251386485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_123
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 164
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c359182fba1bd4a3e89920256927ae78
+      internalID: 384164839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_124
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 172
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c528b20ec014c2db30d6cf3189aec9
+      internalID: 1731365711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_125
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7527e9c3324574626abda3a0c384d9bf
+      internalID: -845082358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_126
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 145
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bf325428a164f81b9d04d5853090b4
+      internalID: -541497759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_127
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 146
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5e9a097f8fe446986e8ce9c1a195e3
+      internalID: -353562895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_128
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 160
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d3bcd6e343440138467d90ef7e4c98
+      internalID: -746782990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_129
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4515eeeb4ddab44a4a2012c3c4a09b54
+      internalID: 1489167144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_130
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 146
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32770cda581914ed09cc1592f167a32e
+      internalID: 489805021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_131
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 127
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ce4df399ea54ab4ad587d68a109da5
+      internalID: 1644085200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_132
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 129
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aceae3cd4c804390b15bb68d9c1c137
+      internalID: 1161600919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_133
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 136
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6daccebdc2c443c0b608be8fa19f580
+      internalID: -855687205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_134
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 110
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc5b6f030736429ca9a5954b8694201
+      internalID: -1603426072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_135
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 112
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6269ae34cff8f43648c53df9289c5902
+      internalID: 1325331732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_136
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 126
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468bc292e449f49e0a3eb1ce78ff3e40
+      internalID: 1426247949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_137
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 109
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a3004e43df54c8a9025aed7c22a8d7
+      internalID: -972161429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_138
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 113
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83431e7834ac64edf8f653357f1a1077
+      internalID: 1892295783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_139
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 91
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2d8804e49f048459ae44f0c7a568e2
+      internalID: -2103394583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_140
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 91
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9d58b8219be44feab6414f502f53a6
+      internalID: -339235563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_141
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 97
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db60b4fae1da44a069da7867b5d25ef9
+      internalID: -1249641166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_142
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 98
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fab4edfa1054d848699a10130f2293
+      internalID: 2129008740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5922d079b843c46ac9e1fb72e50dcd41
+      internalID: 758101416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_144
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 73
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279a0fca56ac34d98b9b3ab5770aafc3
+      internalID: 1484088040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_145
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 84
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261566f292a714fe690512f90018a74c
+      internalID: -1105296467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_146
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 87
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3925aa4915b8a4bd693304ec0b823980
+      internalID: 2039702568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_147
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 73
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a23e2765c0140d797993b9545da77d
+      internalID: 1019224329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_148
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 77
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248c15d576cbe47788c1ed9cd7cc7bfd
+      internalID: -2029669856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_149
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 53
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e01ced5ebad49e6b3eff6a0e862994
+      internalID: 912178458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_150
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e08eceb4063d45258e8db1b9cbb6967
+      internalID: -1263260067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_151
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 61
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3dcb5cc6a4b64ddfa99f81b8d14cc3d
+      internalID: 984127924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_152
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 66
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdca83144dab49dca564563e4ea7353
+      internalID: -2141628762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_153
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e7f82db1b8c4883906288699b256c5
+      internalID: 1094827695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_154
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 39
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052fa34b662ba45fcbb6bb3a61e58593
+      internalID: -85033652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_155
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 49
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a75a096156bd42838e11a8326c548db
+      internalID: 1297812705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_156
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 39
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da4730b5a4564872961ae50e7a3c45e
+      internalID: -1601611532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_157
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bce465ab6f2d4c70a1d9114b332e73a
+      internalID: 1438267142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_158
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 21
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d5093b931664680899863ce7decf56
+      internalID: 1793995310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_159
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 27
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e2d709b165244ad9dd4c0a76a6056a
+      internalID: 777383930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_160
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 29
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046b2f7f26cd14e889a5c90669979e69
+      internalID: 1498637868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_161
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88eddec5d01a34d58b6d862e3f9b4d62
+      internalID: 1191332534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_162
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 15
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fab89a8425c4ea9ac874c567c3e89f
+      internalID: -766933221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_163
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 18
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcdf896d00a46485681125599f4886ed
+      internalID: -432242738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_164
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 18
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed19b45ee56b24a549b2bc2f615e6bf4
+      internalID: -1924980566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_165
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 18
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e172a75a1ca4614bd0794b7d29bc23
+      internalID: 1860612997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_166
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8377c0eb325a436da2c6bb4ddab4775
+      internalID: -147032852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_167
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c15f5c28d86f4beb9148542f2ab206a
+      internalID: 728973090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_168
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 4
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53eab284b91248a28b3440da06cf83b
+      internalID: 1461492463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_169
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 4
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3763a0787e0411f933f9bbb64b6c7e
+      internalID: -326765467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Curious Expedition - Items_170
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 8
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81618a541282d4592866c0698cb8956e
+      internalID: -161329453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Curious Expedition - Items_0: 1887967238
+      PC Computer - Curious Expedition - Items_1: 1735583880
+      PC Computer - Curious Expedition - Items_10: 1472874010
+      PC Computer - Curious Expedition - Items_100: -1276866646
+      PC Computer - Curious Expedition - Items_101: -1781532523
+      PC Computer - Curious Expedition - Items_102: -1250365539
+      PC Computer - Curious Expedition - Items_103: -1138448936
+      PC Computer - Curious Expedition - Items_104: 1427874573
+      PC Computer - Curious Expedition - Items_105: -871836839
+      PC Computer - Curious Expedition - Items_106: -81933149
+      PC Computer - Curious Expedition - Items_107: 1804665141
+      PC Computer - Curious Expedition - Items_108: 1788627651
+      PC Computer - Curious Expedition - Items_109: 1823681860
+      PC Computer - Curious Expedition - Items_11: 1613653257
+      PC Computer - Curious Expedition - Items_110: -934235194
+      PC Computer - Curious Expedition - Items_111: -125127028
+      PC Computer - Curious Expedition - Items_112: 540834080
+      PC Computer - Curious Expedition - Items_113: -776814728
+      PC Computer - Curious Expedition - Items_114: 714978298
+      PC Computer - Curious Expedition - Items_115: -67939698
+      PC Computer - Curious Expedition - Items_116: -1040917209
+      PC Computer - Curious Expedition - Items_117: 2095485
+      PC Computer - Curious Expedition - Items_118: -734082566
+      PC Computer - Curious Expedition - Items_119: -1042895725
+      PC Computer - Curious Expedition - Items_12: -1743957141
+      PC Computer - Curious Expedition - Items_120: 1361944379
+      PC Computer - Curious Expedition - Items_121: -373423208
+      PC Computer - Curious Expedition - Items_122: 1251386485
+      PC Computer - Curious Expedition - Items_123: 384164839
+      PC Computer - Curious Expedition - Items_124: 1731365711
+      PC Computer - Curious Expedition - Items_125: -845082358
+      PC Computer - Curious Expedition - Items_126: -541497759
+      PC Computer - Curious Expedition - Items_127: -353562895
+      PC Computer - Curious Expedition - Items_128: -746782990
+      PC Computer - Curious Expedition - Items_129: 1489167144
+      PC Computer - Curious Expedition - Items_13: -1697160246
+      PC Computer - Curious Expedition - Items_130: 489805021
+      PC Computer - Curious Expedition - Items_131: 1644085200
+      PC Computer - Curious Expedition - Items_132: 1161600919
+      PC Computer - Curious Expedition - Items_133: -855687205
+      PC Computer - Curious Expedition - Items_134: -1603426072
+      PC Computer - Curious Expedition - Items_135: 1325331732
+      PC Computer - Curious Expedition - Items_136: 1426247949
+      PC Computer - Curious Expedition - Items_137: -972161429
+      PC Computer - Curious Expedition - Items_138: 1892295783
+      PC Computer - Curious Expedition - Items_139: -2103394583
+      PC Computer - Curious Expedition - Items_14: 823348894
+      PC Computer - Curious Expedition - Items_140: -339235563
+      PC Computer - Curious Expedition - Items_141: -1249641166
+      PC Computer - Curious Expedition - Items_142: 2129008740
+      PC Computer - Curious Expedition - Items_143: 758101416
+      PC Computer - Curious Expedition - Items_144: 1484088040
+      PC Computer - Curious Expedition - Items_145: -1105296467
+      PC Computer - Curious Expedition - Items_146: 2039702568
+      PC Computer - Curious Expedition - Items_147: 1019224329
+      PC Computer - Curious Expedition - Items_148: -2029669856
+      PC Computer - Curious Expedition - Items_149: 912178458
+      PC Computer - Curious Expedition - Items_15: -460695487
+      PC Computer - Curious Expedition - Items_150: -1263260067
+      PC Computer - Curious Expedition - Items_151: 984127924
+      PC Computer - Curious Expedition - Items_152: -2141628762
+      PC Computer - Curious Expedition - Items_153: 1094827695
+      PC Computer - Curious Expedition - Items_154: -85033652
+      PC Computer - Curious Expedition - Items_155: 1297812705
+      PC Computer - Curious Expedition - Items_156: -1601611532
+      PC Computer - Curious Expedition - Items_157: 1438267142
+      PC Computer - Curious Expedition - Items_158: 1793995310
+      PC Computer - Curious Expedition - Items_159: 777383930
+      PC Computer - Curious Expedition - Items_16: 1180507134
+      PC Computer - Curious Expedition - Items_160: 1498637868
+      PC Computer - Curious Expedition - Items_161: 1191332534
+      PC Computer - Curious Expedition - Items_162: -766933221
+      PC Computer - Curious Expedition - Items_163: -432242738
+      PC Computer - Curious Expedition - Items_164: -1924980566
+      PC Computer - Curious Expedition - Items_165: 1860612997
+      PC Computer - Curious Expedition - Items_166: -147032852
+      PC Computer - Curious Expedition - Items_167: 728973090
+      PC Computer - Curious Expedition - Items_168: 1461492463
+      PC Computer - Curious Expedition - Items_169: -326765467
+      PC Computer - Curious Expedition - Items_17: -2041257703
+      PC Computer - Curious Expedition - Items_170: -161329453
+      PC Computer - Curious Expedition - Items_18: 649008041
+      PC Computer - Curious Expedition - Items_19: -1737604007
+      PC Computer - Curious Expedition - Items_2: -741323967
+      PC Computer - Curious Expedition - Items_20: -1966750650
+      PC Computer - Curious Expedition - Items_21: 101344914
+      PC Computer - Curious Expedition - Items_22: -1986625725
+      PC Computer - Curious Expedition - Items_23: 458582217
+      PC Computer - Curious Expedition - Items_24: 1168989574
+      PC Computer - Curious Expedition - Items_25: 922055789
+      PC Computer - Curious Expedition - Items_26: 466891062
+      PC Computer - Curious Expedition - Items_27: -546100
+      PC Computer - Curious Expedition - Items_28: 759335288
+      PC Computer - Curious Expedition - Items_29: -566679574
+      PC Computer - Curious Expedition - Items_3: -606448594
+      PC Computer - Curious Expedition - Items_30: 1722590483
+      PC Computer - Curious Expedition - Items_31: -182026231
+      PC Computer - Curious Expedition - Items_32: 74114299
+      PC Computer - Curious Expedition - Items_33: 1699446736
+      PC Computer - Curious Expedition - Items_34: -2051638443
+      PC Computer - Curious Expedition - Items_35: -775355971
+      PC Computer - Curious Expedition - Items_36: 1826595804
+      PC Computer - Curious Expedition - Items_37: 1303419107
+      PC Computer - Curious Expedition - Items_38: 2051518383
+      PC Computer - Curious Expedition - Items_39: 1303654384
+      PC Computer - Curious Expedition - Items_4: -697705989
+      PC Computer - Curious Expedition - Items_40: 1135939255
+      PC Computer - Curious Expedition - Items_41: -512452234
+      PC Computer - Curious Expedition - Items_42: -2015775853
+      PC Computer - Curious Expedition - Items_43: 211317167
+      PC Computer - Curious Expedition - Items_44: -1247988178
+      PC Computer - Curious Expedition - Items_45: -1471221338
+      PC Computer - Curious Expedition - Items_46: 262178862
+      PC Computer - Curious Expedition - Items_47: 507802441
+      PC Computer - Curious Expedition - Items_48: 1746385716
+      PC Computer - Curious Expedition - Items_49: 1348995354
+      PC Computer - Curious Expedition - Items_5: 410521159
+      PC Computer - Curious Expedition - Items_50: 794046361
+      PC Computer - Curious Expedition - Items_51: -1525193155
+      PC Computer - Curious Expedition - Items_52: -878201539
+      PC Computer - Curious Expedition - Items_53: -855117848
+      PC Computer - Curious Expedition - Items_54: 1242675401
+      PC Computer - Curious Expedition - Items_55: -1148789211
+      PC Computer - Curious Expedition - Items_56: 1074042636
+      PC Computer - Curious Expedition - Items_57: -1242108459
+      PC Computer - Curious Expedition - Items_58: -884735094
+      PC Computer - Curious Expedition - Items_59: -767642593
+      PC Computer - Curious Expedition - Items_6: 1127881458
+      PC Computer - Curious Expedition - Items_60: -1501255861
+      PC Computer - Curious Expedition - Items_61: 2008012673
+      PC Computer - Curious Expedition - Items_62: -740556103
+      PC Computer - Curious Expedition - Items_63: -874309429
+      PC Computer - Curious Expedition - Items_64: 1791767223
+      PC Computer - Curious Expedition - Items_65: 44467772
+      PC Computer - Curious Expedition - Items_66: -2047152645
+      PC Computer - Curious Expedition - Items_67: -896548188
+      PC Computer - Curious Expedition - Items_68: 1521959709
+      PC Computer - Curious Expedition - Items_69: -64470642
+      PC Computer - Curious Expedition - Items_7: 1671574337
+      PC Computer - Curious Expedition - Items_70: 1541562806
+      PC Computer - Curious Expedition - Items_71: 588775500
+      PC Computer - Curious Expedition - Items_72: -165826383
+      PC Computer - Curious Expedition - Items_73: -1792938938
+      PC Computer - Curious Expedition - Items_74: -1577129508
+      PC Computer - Curious Expedition - Items_75: 1279067519
+      PC Computer - Curious Expedition - Items_76: -1191301405
+      PC Computer - Curious Expedition - Items_77: 1506081509
+      PC Computer - Curious Expedition - Items_78: 1438166709
+      PC Computer - Curious Expedition - Items_79: -2063126785
+      PC Computer - Curious Expedition - Items_8: 741261614
+      PC Computer - Curious Expedition - Items_80: 614656930
+      PC Computer - Curious Expedition - Items_81: -370034506
+      PC Computer - Curious Expedition - Items_82: -356646881
+      PC Computer - Curious Expedition - Items_83: -335048156
+      PC Computer - Curious Expedition - Items_84: -1907556773
+      PC Computer - Curious Expedition - Items_85: -1261018223
+      PC Computer - Curious Expedition - Items_86: 182095868
+      PC Computer - Curious Expedition - Items_87: 314787283
+      PC Computer - Curious Expedition - Items_88: -803810086
+      PC Computer - Curious Expedition - Items_89: 1115960844
+      PC Computer - Curious Expedition - Items_9: -1930613110
+      PC Computer - Curious Expedition - Items_90: -1408691555
+      PC Computer - Curious Expedition - Items_91: -1831990224
+      PC Computer - Curious Expedition - Items_92: 332604140
+      PC Computer - Curious Expedition - Items_93: -266106759
+      PC Computer - Curious Expedition - Items_94: 184295223
+      PC Computer - Curious Expedition - Items_95: -2096464378
+      PC Computer - Curious Expedition - Items_96: -1831223611
+      PC Computer - Curious Expedition - Items_97: 756521284
+      PC Computer - Curious Expedition - Items_98: -521166249
+      PC Computer - Curious Expedition - Items_99: 1849089980
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
