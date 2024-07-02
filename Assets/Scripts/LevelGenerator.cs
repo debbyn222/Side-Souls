@@ -5,115 +5,97 @@ using System.Linq;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public List<Segment> segments;  // List of available segments
-    public Transform player;
-    public Camera mainCamera;
-    public float generationOffset = 5f; // Offset before the camera edge where new segments are generated
+    public List<Segment> segmentPrefabs;  // List of all segment prefabs
+    public Transform player;              
     public Transform startPoint;
+    private float generationDistance = 10f; // Distance ahead of the player to generate new segments
+    private float despawnDistance = 30f;   // Distance behind the player to despawn old segments
 
-    private Vector2 currentPoint;
-    private Dictionary<Vector2, GameObject> generatedSegments = new Dictionary<Vector2, GameObject>();
+    private List<GameObject> activeSegments = new List<GameObject>();
+    private Vector3 nextSpawnPosition;
+    private Transform lastExitPoint;      
 
     void Start()
     {
-        currentPoint = startPoint.position;
-        GenerateInitialSegments();
+        nextSpawnPosition = startPoint.position;
+        GenerateInitialSegment();
+        //GenerateSegment(); 
     }
 
     void Update()
     {
-        Vector3 cameraRightEdge = mainCamera.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
-        if (cameraRightEdge.x > currentPoint.x - generationOffset)
+        
+        if (Vector3.Distance(player.position, nextSpawnPosition) < generationDistance)
         {
             GenerateSegment();
         }
-    }
 
-    void GenerateInitialSegments()
-    {
-        GameObject spawnPrefab = segments[0].prefab;//ensure spawn prefab is first in segment list
-        if (spawnPrefab != null)
-        {
-            GameObject spawnInstance = Instantiate(spawnPrefab, currentPoint, Quaternion.identity);
-            float spawnLength = CalculateSegmentLength(spawnInstance);
-            //float spawnLength = segments[0].exitPoint.position.x - segments[0].entryPoint.position.x;
-            currentPoint += new Vector2(spawnLength, 0);
-        }
-
-        for (int i = 0; i < 3; i++)
-        { // Generate a few initial segments
-            GenerateSegment();
-        }
+        DespawnOldSegments();
     }
 
     void GenerateSegment()
     {
-        Vector2 segmentPosition = new Vector2(currentPoint.x, currentPoint.y);
+        Segment segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+        GameObject newSegment = Instantiate(segment.prefab);
 
-        if (!generatedSegments.ContainsKey(segmentPosition))
+        if (lastExitPoint != null)
         {
-            Segment segment = segments[Random.Range(1, segments.Count)];//start at 1 to excluse spawn
-            GameObject segmentInstance = Instantiate(segment.prefab, currentPoint, Quaternion.identity);
-            generatedSegments[segmentPosition] = segmentInstance;
-
-            // Calculate the segment length dynamically
-            float segmentLength = segment.exitPoint.position.x - segment.entryPoint.position.x;
-            Debug.Log(segmentLength);
-            currentPoint += new Vector2(segmentLength, 0);
+            newSegment.transform.position = lastExitPoint.position - segment.entryPoint.localPosition;
         }
         else
         {
-            float segmentLength = CalculateSegmentLength(generatedSegments[segmentPosition]);
-            currentPoint += new Vector2(segmentLength, 0);
+            newSegment.transform.position = nextSpawnPosition;
         }
+
+        activeSegments.Add(newSegment);
+
+        lastExitPoint = newSegment.transform.Find("ExitPoint");
+
+        // Adjust the next spawn position
+        nextSpawnPosition = lastExitPoint.position;
+
+        // Debugging: Visualize the spawn points
+        //Debug.DrawLine(newSegment.transform.position, nextSpawnPosition, Color.red, 20f);
+    }
+
+    void GenerateInitialSegment()
+    {
+        Segment initialSegment = segmentPrefabs[0]; // The first prefab is the spawn prefab
+        GameObject newSegment = Instantiate(initialSegment.prefab);
+
+        newSegment.transform.position = nextSpawnPosition;
+        activeSegments.Add(newSegment);
+
+        // Find and set the next spawn position using the exit point
+        lastExitPoint = newSegment.transform.Find("ExitPoint");
+        nextSpawnPosition = lastExitPoint.position;
+
+        // Draw debug spheres at the entry and exit points for visual confirmation
+        //DrawDebugSpheres(newSegment);
+
+        // Debug line from the current segment's position to the next spawn position
+        Debug.DrawLine(newSegment.transform.position, nextSpawnPosition, Color.red, 10f);
     }
 
 
-    /*    void GenerateSegment()
-        {
-            Vector2 segmentPosition = new Vector2(currentPoint.x, currentPoint.y);
-
-            if (!generatedSegments.ContainsKey(segmentPosition))
-            {
-                Segment segment = segments[Random.Range(1, segments.Count)]; // Start at 1 to exclude spawn
-                GameObject segmentInstance = Instantiate(segment.prefab, currentPoint, Quaternion.identity);
-                generatedSegments[segmentPosition] = segmentInstance;
-
-                // Adjust the current point to the exit point of the newly instantiated segment
-                Transform exitPoint = segmentInstance.transform.Find("ExitPoint");
-                if (exitPoint != null)
-                {
-                    currentPoint = new Vector2(exitPoint.position.x, exitPoint.position.y);
-                }
-                else
-                {
-                    Debug.LogError("ExitPoint not found in segment prefab: " + segment.prefab.name);
-                }
-            }
-            else
-            {
-                float segmentLength = CalculateSegmentLength(generatedSegments[segmentPosition]);
-                currentPoint += new Vector2(segmentLength, 0);
-            }
-        }*/
-
-
-    float CalculateSegmentLength(GameObject segmentInstance)
+    void DespawnOldSegments()
     {
-        // Assuming the segment has a BoxCollider2D or Renderer to determine its length
-        BoxCollider2D collider = segmentInstance.GetComponent<BoxCollider2D>();
-        if (collider != null)
+        if (activeSegments.Count == 0) return;
+
+        List<GameObject> segmentsToDespawn = new List<GameObject>();
+
+        foreach (GameObject segment in activeSegments)
         {
-            return collider.size.x;
+            if (Vector3.Distance(player.position, segment.transform.position) > despawnDistance)
+            {
+                segmentsToDespawn.Add(segment);
+            }
         }
 
-        Renderer renderer = segmentInstance.GetComponent<Renderer>();
-        if (renderer != null)
+        foreach (GameObject segment in segmentsToDespawn)
         {
-            return renderer.bounds.size.x;
+            activeSegments.Remove(segment);
+            Destroy(segment);
         }
-
-        // Fallback if no collider or renderer is found
-        return segmentInstance.transform.localScale.x;
     }
 }

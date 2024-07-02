@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         float rollDirection = facingRight ? 1 : -1;
         body.velocity = new Vector2(rollDirection * player.rollSpeed, body.velocity.y);
         gameObject.layer = LayerMask.NameToLayer("RollingPlayer");//makes it possible to phase through enemeies when rolling
-        Debug.Log(gameData.rollAnimationClip.length);
+        //Debug.Log(gameData.rollAnimationClip.length);
         StartCoroutine(EndRoll(gameData.rollAnimationClip.length));
     }
     IEnumerator EndRoll(float duration)
