@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -6,56 +5,75 @@ using System.Linq;
 public class LevelGenerator : MonoBehaviour
 {
     public List<Segment> segmentPrefabs;  // List of all segment prefabs
-    public Transform player;              
+    public Transform player;
     public Transform startPoint;
     private float generationDistance = 10f; // Distance ahead of the player to generate new segments
-    private float despawnDistance = 30f;   // Distance behind the player to despawn old segments
+    private float despawnDistance = 30f; // Distance behind the player to despawn old segments
 
     private List<GameObject> activeSegments = new List<GameObject>();
     private Vector3 nextSpawnPosition;
-    private Transform lastExitPoint;      
+    private Transform lastExitPoint;
+    private GameObject lastSegment;
+
+    // Dictionary to store information about despawned segments
+    private Dictionary<Vector3, Segment> despawnedSegments = new Dictionary<Vector3, Segment>();
 
     void Start()
     {
         nextSpawnPosition = startPoint.position;
         GenerateInitialSegment();
-        //GenerateSegment(); 
     }
 
     void Update()
     {
-        
         if (Vector3.Distance(player.position, nextSpawnPosition) < generationDistance)
         {
             GenerateSegment();
         }
 
         DespawnOldSegments();
+        RespawnOldSegments();
     }
 
     void GenerateSegment()
     {
-        Segment segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+        Segment segment;
+        /*
+                // Check if there is a despawned segment that needs to be respawned
+                if (despawnedSegments.TryGetValue(nextSpawnPosition, out segment))
+                {
+                    despawnedSegments.Remove(nextSpawnPosition);
+                }
+                else
+                {
+                    segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+                }*/
+        segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
         GameObject newSegment = Instantiate(segment.prefab);
 
         if (lastExitPoint != null)
         {
             newSegment.transform.position = lastExitPoint.position - segment.entryPoint.localPosition;
+            
+
         }
         else
         {
             newSegment.transform.position = nextSpawnPosition;
+            Debug.Log("last exit point null");
         }
 
-        activeSegments.Add(newSegment);
 
+
+
+
+        activeSegments.Add(newSegment);
+        lastSegment = newSegment;
         lastExitPoint = newSegment.transform.Find("ExitPoint");
 
         // Adjust the next spawn position
         nextSpawnPosition = lastExitPoint.position;
-
-        // Debugging: Visualize the spawn points
-        //Debug.DrawLine(newSegment.transform.position, nextSpawnPosition, Color.red, 20f);
+        Debug.DrawLine(nextSpawnPosition, nextSpawnPosition + new Vector3(0, 1, 0), Color.red, 50f);
     }
 
     void GenerateInitialSegment()
@@ -66,17 +84,12 @@ public class LevelGenerator : MonoBehaviour
         newSegment.transform.position = nextSpawnPosition;
         activeSegments.Add(newSegment);
 
-        // Find and set the next spawn position using the exit point
+        lastSegment = newSegment;
         lastExitPoint = newSegment.transform.Find("ExitPoint");
         nextSpawnPosition = lastExitPoint.position;
 
-        // Draw debug spheres at the entry and exit points for visual confirmation
-        //DrawDebugSpheres(newSegment);
 
-        // Debug line from the current segment's position to the next spawn position
-        Debug.DrawLine(newSegment.transform.position, nextSpawnPosition, Color.red, 10f);
     }
-
 
     void DespawnOldSegments()
     {
@@ -86,9 +99,11 @@ public class LevelGenerator : MonoBehaviour
 
         foreach (GameObject segment in activeSegments)
         {
-            if (Vector3.Distance(player.position, segment.transform.position) > despawnDistance)
+            if (segment != lastSegment && Vector3.Distance(player.position, segment.transform.position) > despawnDistance)
             {
                 segmentsToDespawn.Add(segment);
+                Segment segmentData = segmentPrefabs.FirstOrDefault(s => s.prefab.name == segment.name.Replace("(Clone)", "").Trim());
+                despawnedSegments[segment.transform.position] = segmentData;
             }
         }
 
@@ -96,6 +111,29 @@ public class LevelGenerator : MonoBehaviour
         {
             activeSegments.Remove(segment);
             Destroy(segment);
+        }
+    }
+
+    void RespawnOldSegments()
+    {
+        List<Vector3> segmentsToRespawn = new List<Vector3>();
+
+        foreach (KeyValuePair<Vector3, Segment> kvp in despawnedSegments)
+        {
+            if (Vector3.Distance(player.position, kvp.Key) < despawnDistance)
+            {
+                segmentsToRespawn.Add(kvp.Key);
+            }
+        }
+
+        foreach (Vector3 position in segmentsToRespawn)
+        {
+            Segment segment = despawnedSegments[position];
+            //GameObject newSegment = Instantiate(segment.prefab, position, Quaternion.identity);
+            GameObject newSegment = Instantiate(segment.prefab);
+            activeSegments.Add(newSegment);
+            despawnedSegments.Remove(position);
+            newSegment.transform.position = position;
         }
     }
 }
