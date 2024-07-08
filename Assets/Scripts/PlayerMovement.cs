@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) && !feetCollision.isOnLadder)
         {
             Roll();
         }
@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         // Calculate new size and offset
         float rollBodyColliderHeight = originalBodyColliderSize.y / 2;
         float newOffsetY = originalBodyColliderOffset.y - (originalBodyColliderSize.y - rollBodyColliderHeight) / 2;
-        
+
 
 
         // Set new body collider size and offset
@@ -177,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
         bodyCollider.size = originalSize;
         bodyCollider.offset = originalOffset;
         animator.transform.position = new Vector2(animator.transform.position.x, originalSpriteOffset.y);
- 
+
         //player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1f);
         // Ensure the player transitions back to the appropriate state
         animator.SetInteger("AnimState", 0);
@@ -187,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
     void ClimbLadder()
     {
         body.gravityScale = 0;
-        if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") != 0)
+        if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0.01f)
         {
             body.velocity = new Vector2(body.velocity.x, player.climbSpeed);
             //insert code to run climbing animation
@@ -200,8 +200,10 @@ public class PlayerMovement : MonoBehaviour
         else//stopped climing but still on ladder
         {
             body.velocity = new Vector2(body.velocity.x, 0); // Stop moving when no key is pressed
-            //insert code to end climbing animation
+                                                             
         }
     }
+
+
 
 }
