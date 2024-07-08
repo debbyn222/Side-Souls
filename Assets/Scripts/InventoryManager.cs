@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
 
+    public ItemSO[] itemSOs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +21,29 @@ public class InventoryManager : MonoBehaviour
     {
         if(Input.GetButtonDown("Inventory") && menuActivated)
         {
+            Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             menuActivated = false;
         }
         else if(Input.GetButtonDown("Inventory") && !menuActivated)
         {
+            Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             menuActivated = true;
         }
     }
-
+    public bool UseItem(string itemName)
+    {
+        for (int i = 0; i < itemSOs.Length; i++)
+        {
+            if(itemSOs[i].itemName == itemName)
+            {
+                bool usable = itemSOs[i].UseItem();
+                return usable;
+            }
+        }
+        return false;
+    }
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i=0; i < itemSlot.Length; i++)
@@ -37,8 +52,9 @@ public class InventoryManager : MonoBehaviour
             {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 if (leftOverItems > 0)
+                {
                     leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);
-
+                }
 
                 return leftOverItems;
 

@@ -826,9 +826,7 @@ GameObject:
   - component: {fileID: 1849772302}
   - component: {fileID: 1849772301}
   - component: {fileID: 1849772303}
-  - component: {fileID: 1849772305}
-  - component: {fileID: 1849772306}
-  - component: {fileID: 1849772307}
+  - component: {fileID: 1849772304}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1041,26 +1039,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.01}
   m_EdgeRadius: 0
---- !u!114 &1849772305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849772296}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0987a20f4dc7db74bba305bb2ee72d62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  body: {fileID: 1849772297}
-  animator: {fileID: 1849772300}
-  rollAnimationClip: {fileID: 7400000, guid: 5118900a0fbea814ea3ffb8fada43696, type: 2}
-  shieldCollider: {fileID: 0}
-  frictionMaterial: {fileID: 0}
-  interactText: {fileID: 0}
---- !u!114 &1849772306
+--- !u!114 &1849772304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1069,10 +1048,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849772296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeddb769a274134698474b4d74799d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0428a95f3dac34564a21b14e47605a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 1849772297}
+  body: {fileID: 0}
   animator: {fileID: 0}
   rollAnimationClip: {fileID: 0}
   shieldCollider: {fileID: 0}
@@ -1083,26 +1062,6 @@ MonoBehaviour:
   rollSpeed: 4
   climbSpeed: 3
   fallThroughDuration: 0.5
---- !u!114 &1849772307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849772296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87177d223eac6042847142cdf97a14d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: john
-  speed: 7
-  rollSpeed: 6
-  climbSpeed: 3
-  jumpForce: 11
-  healthPoints: 100
-  maxStamina: 100
-  equippedArmor: {fileID: 0}
 --- !u!1 &1887290457
 GameObject:
   m_ObjectHideFlags: 0

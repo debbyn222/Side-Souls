@@ -13,8 +13,8 @@ public class AttackArea : MonoBehaviour
    {
     if(collider.GetComponent<Health>() != null) //checks for Health component
     {
-        Health health = collider.GetComponent<Health>(); //get reference to Health component of colliding object
-        health.Damage(damage);//Deal damage to Health component
+        Health health = collider.GetComponent<Health>();
+        health.TakeDamage(damage);
     }
    }
 }
