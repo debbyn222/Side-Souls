@@ -18,3 +18,9 @@ public class AttackArea : MonoBehaviour
     }
    }
 }
+
+/*
+ Edits: (July 7th, 2024)
+    * Replaced "Health" with "PlayerHealth" to fix typo.
+    *   Introduced so many bugs. What is even going on.
+ */

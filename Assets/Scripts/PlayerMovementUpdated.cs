@@ -38,6 +38,8 @@ public class PlayerMovementUpdated : MonoBehaviour
     public AudioSource rollingSound;
     private bool isWalking = false;
 
+    private Vector3 respawnPosition;
+
     void Start()
     {
         //initialize references to components and original settings
@@ -50,7 +52,8 @@ public class PlayerMovementUpdated : MonoBehaviour
         }
         //setting original layer and grav
         originalLayer = gameObject.layer;
-        originalGravityScale = body.gravityScale; 
+        originalGravityScale = body.gravityScale;
+        respawnPosition = transform.position;
     }
 
     void Update()
@@ -273,6 +276,51 @@ public class PlayerMovementUpdated : MonoBehaviour
             body.gravityScale = originalGravityScale;
         }
     }
+
+    public void ResetPlayerState()
+    {
+        // Reset velocity
+        body.velocity = Vector2.zero;
+
+        // Reset any ongoing animations
+        animator.SetInteger("AnimState", 0); // Assuming 0 is the idle state
+
+        // Reset any temporary states (e.g., rolling)
+        isRolling = false;
+
+        // Reset the player's layer
+        gameObject.layer = originalLayer;
+
+        // Reset the position to the initial respawn position
+        transform.position = respawnPosition;
+
+        // Reset gravity to original value if applicable
+        ResetGravity();
+        body.gravityScale = originalGravityScale;
+
+        // Enable colliders after a short delay to prevent immediate collision issues
+        StartCoroutine(EnableCollidersAfterDelay());
+
+        // Reactivate colliders if they were disabled during some operations
+        bodyCollider.enabled = true;
+        feetCollider.enabled = true;
+        if (shieldCollider != null)
+        {
+            shieldCollider.enabled = true;
+        }
+    }
+
+    IEnumerator EnableCollidersAfterDelay()
+    {
+        yield return new WaitForSeconds(0.1f); // Adjust delay time as needed
+
+        // Enable the colliders
+        bodyCollider.enabled = true;
+        feetCollider.enabled = true;
+        shieldCollider.enabled = true;
+    }
+
+
 }
 /* Notes:
  * Huge change to original PlayerMovement script

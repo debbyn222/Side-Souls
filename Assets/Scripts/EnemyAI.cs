@@ -27,6 +27,8 @@ public class EnemyAI : MonoBehaviour
     private bool inRange; //chcek if player is in range
     private bool attackCooldown; //Check is enemy is still cooling down
     private float intTimer;
+    private bool canWalk;
+    private bool isEnemy = true;
 
     private bool isFacingRight = false;
     //private Sensor_Bandit sensor;
@@ -37,6 +39,12 @@ public class EnemyAI : MonoBehaviour
         intTimer = timer; //store intial value of timer
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        // Debugging: Ensure animator is not null
+        if (animator == null)
+        {
+            Debug.LogError("Animator component not found on " + gameObject.name);
+        }
     }
 
     // Update is called once per frame
@@ -64,13 +72,21 @@ public class EnemyAI : MonoBehaviour
             inRange = false;
         }
 
-        //if player is out of range, stop attacking
-        if(inRange == false)
+        // If player is out of range, stop attacking
+        if (inRange == false)
         {
-            animator.SetBool("canWalk", false);
-            StopAttack(); 
-        }
+            // Ensure 'canWalk' parameter exists in Animator
+            if (animator.HasParameter("canWalk"))
+            {
+                animator.SetBool("canWalk", false);
+            }
+            else
+            {
+                Debug.LogError("Animator parameter 'canWalk' does not exist.");
+            }
 
+            StopAttack();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -112,26 +128,32 @@ public class EnemyAI : MonoBehaviour
 
     void Move()
     {
-        //Move towards plauer if not attacking
-        animator.SetBool("canWalk", true);
+        // Move towards player if not attacking
+        // Ensure 'canWalk' parameter exists in Animator
+        if (animator.HasParameter("canWalk"))
+        {
+            animator.SetBool("canWalk", true);
+        }
+        else
+        {
+            Debug.LogError("Animator parameter 'canWalk' does not exist.");
+        }
+
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
             targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
-            //transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
             float directionOfTravel;
             if (target.transform.position.x > transform.position.x)
             {
                 directionOfTravel = 1;
-            } else
+            }
+            else
             {
                 directionOfTravel = -1;
             }
-            /*if (targetPosition.y > transform.position.y + 2)
-            {
-                Jump();
-            }*/
-            rb.velocity = new Vector2(speed*directionOfTravel, rb.velocity.y);
+
+            rb.velocity = new Vector2(speed * directionOfTravel, rb.velocity.y);
         }
     }
 
@@ -141,14 +163,24 @@ public class EnemyAI : MonoBehaviour
         animator.SetTrigger("Jump");
     }
 
-    void Attack ()
+    void Attack()
     {
-        timer = intTimer; //Reset timer when player enter attack Range
-        attackMode = true; //To check if Enemy can still attack or not
+        timer = intTimer; // Reset timer when player enter attack Range
+        attackMode = true; // To check if Enemy can still attack or not
 
-        animator.SetBool("canWalk", false);
+        // Ensure 'canWalk' parameter exists in Animator
+        if (animator.HasParameter("canWalk"))
+        {
+            animator.SetBool("canWalk", false);
+        }
+        else
+        {
+            Debug.LogError("Animator parameter 'canWalk' does not exist.");
+        }
+
         animator.SetBool("Attack", true);
     }
+
 
     void StopAttack ()
     {
@@ -197,5 +229,10 @@ public class EnemyAI : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+
+    public bool EnemyCheck()
+    {
+        return isEnemy;
     }
 }

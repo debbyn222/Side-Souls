@@ -3,79 +3,90 @@ using UnityEngine;
 public class HookWeapon : MonoBehaviour
 {
     public float speed = 10f;
-    public float maxDistance = 10f; //could lead to a possible bug
-    private Vector3 startPosition;
+    public float maxDistance = 10f;
+    private Transform playerTransform;
     private bool isReturning = false;
-    private Transform playerTransform;  // Store the player's Transform
+    private Transform hookedEnemy;
+    private AudioSource hookLaunchSound;
     private Vector3 initialScale;
-    private Transform hookedEnemy; // Store the reference to the hooked enemy
-    private Collider2D hookCollider; // Reference to the hook's Collider2D component
+    private Vector3 launchDirection;
 
-    public AudioSource hookLaunchSound; //Reference to the audioSource component
-    void Start()
+    void Awake()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+        hookLaunchSound = GetComponent<AudioSource>();
+
+        if (hookLaunchSound == null)
+        {
+            Debug.LogError("AudioSource component not found on HookWeapon GameObject.");
+        }
+    }
+
+    void Start()
+    {
         initialScale = transform.localScale;
         gameObject.SetActive(false);
-        hookCollider = GetComponent<Collider2D>(); // Get the Collider2D component
-        Debug.Log("Hook initialized and deactivated.");
     }
 
     void Update()
     {
         if (!isReturning)
         {
-            // Move the hook forward
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-            Debug.Log("Hook moving forward.");
-            // Check if the hook has reached its maximum distance
-            if (Vector3.Distance(startPosition, transform.position) >= maxDistance) //could be possible bug 
+            transform.Translate(launchDirection * speed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, playerTransform.position) >= maxDistance)
             {
                 isReturning = true;
-                Debug.Log("Hook reached max distance, returning.");
             }
         }
         else
         {
-            // Move the hook back to the player
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
-            Debug.Log("Hook returning to player.");
-            // Reset the hook if it has returned to the player
+            Vector3 returnPosition = playerTransform.position + launchDirection * 0.5f; // Adjust to stop before hitting the player
+            transform.position = Vector3.MoveTowards(transform.position, returnPosition, speed * Time.deltaTime);
 
             if (hookedEnemy != null)
             {
-                // Move the hooked enemy towards the player as well
                 hookedEnemy.position = Vector3.MoveTowards(hookedEnemy.position, playerTransform.position, speed * Time.deltaTime);
-                Debug.Log("Hook is reeling in the enemy.");
             }
 
-            if ((Vector3.Distance(transform.position, playerTransform.position) < 0.1f) && isReturning) //might lead to bug (might have fixed it)
+            // Adjusted logic to account for both sides
+            if (Vector3.Distance(transform.position, playerTransform.position) < 0.5f)
             {
                 ResetHook();
-                Debug.Log("Hook returned to player and reset.");
             }
         }
     }
 
     void OnEnable()
     {
-        hookLaunchSound.Play();
-        startPosition = playerTransform.position;
+        if (hookLaunchSound != null)
+        {
+            hookLaunchSound.Play();
+        }
+        else
+        {
+            Debug.LogWarning("hookLaunchSound is null in OnEnable().");
+        }
+
+        launchDirection = playerTransform.localScale.x > 0 ? Vector3.right : Vector3.left;
+        transform.position = playerTransform.position + launchDirection * 0.5f; // Adjusted spawn position
         isReturning = false;
-        hookedEnemy = null; // Reset the hooked enemy
-        Debug.Log("Hook enabled and starting at: " + startPosition);
+        hookedEnemy = null;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy") && !isReturning)
         {
-            // Attach the enemy to the hook
             isReturning = true;
             hookedEnemy = other.transform;
-            other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Rigidbody2D enemyRigidbody = other.GetComponent<Rigidbody2D>();
+            if (enemyRigidbody != null)
+            {
+                enemyRigidbody.velocity = Vector2.zero; // Stop the enemy's velocity
+                enemyRigidbody.bodyType = RigidbodyType2D.Kinematic;
+            }
             other.transform.SetParent(transform);
-            Debug.Log("Hook hit an enemy, returning.");
         }
     }
 
@@ -87,17 +98,34 @@ public class HookWeapon : MonoBehaviour
         transform.localScale = initialScale;
         gameObject.SetActive(false);
 
-        // Detach the enemy
         if (hookedEnemy != null)
         {
+            Rigidbody2D enemyRigidbody = hookedEnemy.GetComponent<Rigidbody2D>();
+            if (enemyRigidbody != null)
+            {
+                enemyRigidbody.bodyType = RigidbodyType2D.Dynamic; // Set back to Dynamic for normal physics behavior
+            }
             hookedEnemy.SetParent(null);
             hookedEnemy = null;
         }
-
-        Debug.Log("Hook reset.");
     }
 
+    public void LaunchHook(Vector3 direction)
+    {
+        launchDirection = direction;
+        gameObject.SetActive(true);
+
+        if (hookLaunchSound != null)
+        {
+            hookLaunchSound.Play();
+        }
+        else
+        {
+            Debug.LogWarning("hookLaunchSound is null in LaunchHook().");
+        }
+    }
 }
+
 
 /* Notes:
  * This is still bugged, takes around 3-4 button presses (F) to actually fire the hook. Not sure why that's happening.

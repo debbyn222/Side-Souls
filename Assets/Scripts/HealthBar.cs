@@ -15,18 +15,24 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public float health;
-    public float maxHealth;
-    public Image healthBar;
+    public float health; //current health
+    public float maxHealth = 10; //initializes maxHealth variable and sets it to 10
+    public Image healthBar; //refernece to UI healthbar
+    public DeathSceneManager deathSceneManager; // Reference to the DeathSceneManager script
+    public PlayerMovementUpdated playerMovement; // Reference to PlayerMovementUpdated script
 
-    public Health pHealth;
-     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = maxHealth; //health is (re)set to maxHealth
 
+        // Ensure playerMovement is assigned
+        playerMovement = GetComponent<PlayerMovementUpdated>();
+        if (playerMovement == null)
+        {
+            Debug.LogError("PlayerMovementUpdated component not found on the same GameObject as HealthBar.");
+        }
     }
     /* should be the other way around tho imo? as in: "health = maxHealth;"
         - however I could see a potential flaw
@@ -38,20 +44,17 @@ public class HealthBar : MonoBehaviour
     //Original comment for the original code (above) was: //maxhealth is initialized to be equal to health at start
 
     // Update is called once per frame
-     void Update()
+    void Update()
     {
-      health = pHealth.health;
-      maxHealth = pHealth.maxHealth;
+        //update fill amount of the health bar based on current health
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
 
-       healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
-
-        /*    if (health <= 0)
-            {
-                Destroy(gameObject);
-            }*/
+        if (health <= 0)
+        {
+            deathSceneManager.ShowDeathUI();
+            playerMovement.ResetPlayerState(); // Reset player state when health reaches zero
+        }
     }
-
-
 }
 /* Notes:
     - Should be merged with PlayerHealth.cs
