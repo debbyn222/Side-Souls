@@ -28,6 +28,7 @@ public class LevelGenerator : MonoBehaviour
     {
         if (Vector3.Distance(player.position, nextSpawnPosition) < generationDistance)
         {
+            
             GenerateSegment();
         }
 
@@ -40,8 +41,24 @@ public class LevelGenerator : MonoBehaviour
     {
         Segment segment;
         segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
-        
+
         //generate unergrund or aboveground segments depending if segment transition undergound or above
+        if (isUnderGround)
+        {
+            while (segment.prefab.CompareTag("Aboveground") || segment.prefab.CompareTag("TransitionIn"))
+            {
+                segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+            }
+
+        }
+        else
+        {
+            while (segment.prefab.CompareTag("Underground") || segment.prefab.CompareTag("TransitionOut"))
+            {
+                segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+            }
+        }
+
         if (segment.prefab.CompareTag("TransitionIn")) {
             isUnderGround = true;
         }
@@ -50,28 +67,15 @@ public class LevelGenerator : MonoBehaviour
             isUnderGround = false;
         }
 
-        if (isUnderGround)
-        {
-            while (segment.prefab.CompareTag("Overworld"))
-            {
-                segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
-            }
 
-        }
-        else
-        {
-            while (segment.prefab.CompareTag("Underground"))
-            {
-                segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
-            }
-        }
 
         GameObject newSegment = Instantiate(segment.prefab);
+        segment.entryPoint = newSegment.transform.Find("EntryPoint");
+        segment.exitPoint = newSegment.transform.Find("ExitPoint");
+
         if (lastExitPoint != null)
         {
             newSegment.transform.position = lastExitPoint.position - segment.entryPoint.localPosition;
-
-
         }
         else
         {
@@ -92,6 +96,8 @@ public class LevelGenerator : MonoBehaviour
     {
         Segment initialSegment = segmentPrefabs[0]; // The first prefab is the spawn prefab
         GameObject newSegment = Instantiate(initialSegment.prefab);
+        initialSegment.entryPoint = newSegment.transform.Find("EntryPoint");
+        initialSegment.exitPoint = newSegment.transform.Find("ExitPoint");
 
         newSegment.transform.position = nextSpawnPosition;
         activeSegments.Add(newSegment);

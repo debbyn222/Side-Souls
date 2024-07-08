@@ -12,6 +12,8 @@ TagManager:
   - Aboveground
   - TransitionOut
   - TransitionIn
+  - EntryPoint
+  - ExitPoint
   layers:
   - Default
   - TransparentFX
