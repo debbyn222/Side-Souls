@@ -144,7 +144,8 @@ public class EnemyController_Ranged : MonoBehaviour
 
             projectileLaunchPoint.transform.right = enemyDetector.targetDirection;
 
-            Instantiate(projectile, projectileLaunchPoint.position, projectileLaunchPoint.rotation);
+            //TODO: Should making projectile spawn here during this attack funciton 
+            Invoke(nameof(SpawnProjectile), 0.9f);
 
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -153,6 +154,12 @@ public class EnemyController_Ranged : MonoBehaviour
     void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    void SpawnProjectile()
+    {
+        //Note: For now just making this an event trigger on the wizard attack animation
+        Instantiate(projectile, projectileLaunchPoint.position, projectileLaunchPoint.rotation);
     }
 
     void Flip()

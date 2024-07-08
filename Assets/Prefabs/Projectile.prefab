@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5437779771456809072}
   - component: {fileID: 2898823830025895799}
   - component: {fileID: 5066813170772122409}
-  - component: {fileID: 3343039021094454331}
+  - component: {fileID: 712509715219634703}
+  - component: {fileID: 8894316050848983151}
   m_Layer: 7
   m_Name: Projectile
   m_TagString: Untagged
@@ -29,9 +30,9 @@ Transform:
   m_GameObject: {fileID: 1088170764259997260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.62, y: -2.51, z: 0.061049204}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 12.597, y: -2.494, z: 0.061049204}
+  m_LocalScale: {x: 2.871387, y: 2.871387, z: 2.871387}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa3d31a45b8a564eaab37332d70ee85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 72
+  ignoredLayers:
+    serializedVersion: 2
+    m_Bits: 2688
 --- !u!50 &2898823830025895799
 Rigidbody2D:
   serializedVersion: 4
@@ -116,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -943592288, guid: 4bd7e27cfe517944aa33b51a2eb1ce0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,8 +134,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3343039021094454331
-CircleCollider2D:
+--- !u!95 &712509715219634703
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088170764259997260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c84d79c2e86130845bb2302e9f933e92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &8894316050848983151
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,6 +187,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
+  m_Offset: {x: 0.0037795599, y: -0.0072733476}
+  m_Size: {x: 0.24423906, y: 0.117875665}
+  m_Direction: 1

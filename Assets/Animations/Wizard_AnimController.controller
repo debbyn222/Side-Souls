@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0078caa0ed77eea45b172109ceabb19b, type: 2}
+  m_Motion: {fileID: 7400000, guid: d80068deb895fe447b4f0655c49a6a11, type: 2}
   m_Tag: 
   m_SpeedParameter: AnimRunSpeed
   m_MirrorParameter: 
@@ -35,7 +35,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy_dle
+  m_Name: Enemy_Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -50,7 +50,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ee0a7ebd79d7b30459cd6f8d1f4e946a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 97303ec9dc286ac468c996982ece80e7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -90,7 +90,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MeleeEnemy_AnimController
+  m_Name: Wizard_AnimController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: AnimState
@@ -195,7 +195,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9a7a21884a1d5af439523a3616a7d02e, type: 2}
+  m_Motion: {fileID: 7400000, guid: d1a1849527c329c40be19b3792ed5bd9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -240,7 +240,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.13931626
+  m_TransitionDuration: 0.6649573
   m_TransitionOffset: 0
   m_ExitTime: 0.6875
   m_HasExitTime: 1
