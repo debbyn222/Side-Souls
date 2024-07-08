@@ -15,7 +15,7 @@ public class LevelGenerator : MonoBehaviour
     private Transform lastExitPoint;
     private GameObject lastSegment;
     private List<GameObject> despawnedSegments = new List<GameObject>();
-    private bool isUnderGround = false;
+    private bool isUnderGround = true;
 
     void Start()
     {

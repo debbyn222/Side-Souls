@@ -2166,6 +2166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPrefabs:
+  - prefab: {fileID: 8857993778152026686, guid: bbf3f2b05b9704b4e863f66d16673d37, type: 3}
   - prefab: {fileID: 14100955013317519, guid: b47ae1a0393a43e4683c52598c4bb351, type: 3}
   - prefab: {fileID: 1847724659286706444, guid: b81196f4fda2d394fa0b4869214683fa, type: 3}
   - prefab: {fileID: 6542670618177916917, guid: 9ebaea5a4bf37fb41ba4eaad5d252455, type: 3}
@@ -2173,6 +2174,7 @@ MonoBehaviour:
   - prefab: {fileID: 7252198859671937460, guid: d2f5bed5c487aa04b9cc6a9476161e07, type: 3}
   - prefab: {fileID: 4944604481358981201, guid: 570b95bb124d8eb4e8d86589be128a7c, type: 3}
   - prefab: {fileID: 7052868726141200080, guid: a1659aa627b19c842a54f1472d2c52de, type: 3}
+  - prefab: {fileID: 6504995191108990696, guid: 0d29d74e3ce4d594b99695c17469db4f, type: 3}
   player: {fileID: 1593813962}
   startPoint: {fileID: 185260897}
 --- !u!4 &1713013864
