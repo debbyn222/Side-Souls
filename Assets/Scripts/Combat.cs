@@ -12,21 +12,33 @@ public class Combat : MonoBehaviour
     public GameObject hookPrefab;
     public Transform hookSpawnPoint;
     private GameObject currentHook;
+    public HookWeapon hookWeapon;
 
     private Stamina stamina;
-    public AudioSource rollSound; //Reference to the AudioSource component
+    public AudioSource rollSound; // Reference to the roll sound AudioSource component
     public AudioSource attackSound; // Reference to the attack sound AudioSource component
-
 
     void Start()
     {
-        stamina = GetComponent<Stamina>();//get stamina component attached to game obj
+        stamina = GetComponent<Stamina>(); // Get stamina component attached to game object
+
+        // Ensure the hookPrefab has a HookWeapon component
+        if (hookPrefab != null)
+        {
+            hookWeapon = hookPrefab.GetComponent<HookWeapon>();
+            if (hookWeapon == null)
+            {
+                Debug.LogError("Hook prefab does not have a HookWeapon component.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Hook prefab is not assigned.");
+        }
     }
 
     void Update()
     {
-        //These methods (attack and roll) already exist elsewhere
-        //Will most likely have to come back and go over this again
         // Handle attack input
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -37,8 +49,6 @@ public class Combat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             Roll();
-            //switched placeholder "M" key to actual roll keys allows for stamina to be deducted from roll
-            //but looks ugly, could probably be cleaned up to look better.
         }
 
         if (Input.GetKeyDown(KeyCode.F)) // Fire the Hook with F key
@@ -51,7 +61,7 @@ public class Combat : MonoBehaviour
     {
         if (stamina.StartAction(attackCost))
         {
-            attackSound.Play(); //play attack sound
+            attackSound.Play(); // Play attack sound
             Debug.Log("Attack performed! Stamina deducted.");
             // Implement attack action here
             stamina.EndAction();
@@ -67,7 +77,7 @@ public class Combat : MonoBehaviour
     {
         if (stamina.StartAction(rollCost))
         {
-            rollSound.Play(); //plays roll sound
+            rollSound.Play(); // Play roll sound
             Debug.Log("Roll performed! Stamina deducted.");
             // Implement roll action here
             stamina.EndAction();
@@ -84,17 +94,26 @@ public class Combat : MonoBehaviour
         if (currentHook == null)
         {
             Debug.Log("Creating new hook instance.");
-            Vector3 spawnPosition = hookSpawnPoint != null ? hookSpawnPoint.position : transform.position;
-            currentHook = Instantiate(hookPrefab, spawnPosition, transform.rotation);
+            Vector3 spawnPosition = transform.position + (transform.localScale.x > 0 ? Vector3.right : Vector3.left) * 2; // Offset to spawn in front of the player
+            currentHook = Instantiate(hookPrefab, spawnPosition, Quaternion.identity);
         }
         else if (!currentHook.activeInHierarchy)
         {
             Debug.Log("Reactivating hook.");
-            currentHook.transform.position = hookSpawnPoint != null ? hookSpawnPoint.position : transform.position;
+            Vector3 spawnPosition = transform.position + (transform.localScale.x > 0 ? Vector3.right : Vector3.left) * 2; // Offset to spawn in front of the player
+            currentHook.transform.position = spawnPosition;
             currentHook.SetActive(true);
         }
+
+        // Set hook direction based on player facing direction
+        Vector3 launchDirection = transform.localScale.x > 0 ? Vector3.right : Vector3.left;
+        currentHook.GetComponent<HookWeapon>().LaunchHook(launchDirection);
     }
+
+
 }
+
+
 
 //Notes:
 

@@ -18,12 +18,21 @@ public class HealthBar : MonoBehaviour
     public float health; //current health
     public float maxHealth = 10; //initializes maxHealth variable and sets it to 10
     public Image healthBar; //refernece to UI healthbar
-     
+    public DeathSceneManager deathSceneManager; // Reference to the DeathSceneManager script
+    public PlayerMovementUpdated playerMovement; // Reference to PlayerMovementUpdated script
+
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth; //health is (re)set to maxHealth
+
+        // Ensure playerMovement is assigned
+        playerMovement = GetComponent<PlayerMovementUpdated>();
+        if (playerMovement == null)
+        {
+            Debug.LogError("PlayerMovementUpdated component not found on the same GameObject as HealthBar.");
+        }
     }
     /* should be the other way around tho imo? as in: "health = maxHealth;"
         - however I could see a potential flaw
@@ -42,7 +51,8 @@ public class HealthBar : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);//destroy the object if health drops to or below zero
+            deathSceneManager.ShowDeathUI();
+            playerMovement.ResetPlayerState(); // Reset player state when health reaches zero
         }
     }
 }
