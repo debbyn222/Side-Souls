@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public HealthBar pHealth;
-    public float damage;
+    public Health pHealth;
+    public float damage = 2;
+     
     
 
     // Start is called before the first frame update
@@ -20,11 +21,11 @@ public class Damage : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            pHealth.health -= damage;
+            pHealth.TakeDamage(damage);
         }
     }
 }

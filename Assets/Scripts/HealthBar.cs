@@ -8,22 +8,30 @@ public class HealthBar : MonoBehaviour
     public float health;
     public float maxHealth;
     public Image healthBar;
+
+    public Health pHealth;
      
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        
+
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+      health = pHealth.health;
+      maxHealth = pHealth.maxHealth;
 
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+       healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+
+        /*    if (health <= 0)
+            {
+                Destroy(gameObject);
+            }*/
     }
+
+
 }

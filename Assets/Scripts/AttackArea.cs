@@ -10,7 +10,7 @@ public class AttackArea : MonoBehaviour
     if(collider.GetComponent<Health>() != null)
     {
         Health health = collider.GetComponent<Health>();
-        health.Damage(damage);
+        health.TakeDamage(damage);
     }
    }
 }
