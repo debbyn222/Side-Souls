@@ -13,9 +13,13 @@ public class GameData : ScriptableObject
     public AnimationClip rollAnimationClip;
     public PhysicsMaterial2D noFrictionMaterial;
     [NonSerialized] public Player player;
+    [NonSerialized] public BoxCollider2D playerFeetCollider;
+    [NonSerialized] public BoxCollider2D playerBodyCollider;
 
     public void Initialize()
     {
         player = FindAnyObjectByType<Player>();
+        playerFeetCollider = player.transform.Find("FeetCollider").GetComponent<BoxCollider2D>();
+        playerBodyCollider = player.transform.Find("BodyCollider").GetComponent<BoxCollider2D>();
     }
 }

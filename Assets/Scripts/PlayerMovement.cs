@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     private bool isRolling = false;
     private IInteractable currentInteractable;
+    private BoxCollider2D bodyCollider;
     
 
     // Start is called before the first frame update
@@ -24,8 +25,11 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         feetCollision = GetComponentInChildren<FeetCollision>();
+        gameData.Initialize();
         originaLayer = gameObject.layer;
         originalGravityScale = body.gravityScale;
+        bodyCollider = gameData.playerBodyCollider;
+
     }
 
     // Update is called once per frame
@@ -131,14 +135,32 @@ public class PlayerMovement : MonoBehaviour
         float rollDirection = facingRight ? 1 : -1;
         body.velocity = new Vector2(rollDirection * player.rollSpeed, body.velocity.y);
         gameObject.layer = LayerMask.NameToLayer("RollingPlayer");//makes it possible to phase through enemeies when rolling
-        Debug.Log(gameData.rollAnimationClip.length);
-        StartCoroutine(EndRoll(gameData.rollAnimationClip.length));
+
+        //reduce body collider height
+        Vector2 originalBodyColliderSize = bodyCollider.size;
+        Vector2 originalBodyColliderOffset = bodyCollider.offset;
+
+        // Calculate new size and offset
+        float rollBodyColliderHeight = originalBodyColliderSize.y / 2;
+        float newOffsetY = originalBodyColliderOffset.y - (originalBodyColliderSize.y - rollBodyColliderHeight) / 2;
+
+        // Set new size and offset
+        bodyCollider.size = new Vector2(bodyCollider.size.x, rollBodyColliderHeight);
+        bodyCollider.offset = new Vector2(bodyCollider.offset.x, newOffsetY);
+
+        StartCoroutine(EndRoll(gameData.rollAnimationClip.length, originalBodyColliderSize, originalBodyColliderOffset));
+
+
     }
-    IEnumerator EndRoll(float duration)
+    IEnumerator EndRoll(float duration, Vector2 originalSize, Vector2 originalOffset)
     {
         yield return new WaitForSeconds(duration); // Adjust duration based on roll animation length
         isRolling = false;
         gameObject.layer = originaLayer;
+
+        //revert body collider height
+        bodyCollider.size = originalSize;
+        bodyCollider.offset = originalOffset;
         // Ensure the player transitions back to the appropriate state
         animator.SetInteger("AnimState", 0);
     }
