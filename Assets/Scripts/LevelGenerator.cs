@@ -15,6 +15,7 @@ public class LevelGenerator : MonoBehaviour
     private Transform lastExitPoint;
     private GameObject lastSegment;
     private List<GameObject> despawnedSegments = new List<GameObject>();
+    private bool isUnderGround = false;
 
     void Start()
     {
@@ -39,8 +40,33 @@ public class LevelGenerator : MonoBehaviour
     {
         Segment segment;
         segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
-        GameObject newSegment = Instantiate(segment.prefab);
+        
+        //generate unergrund or aboveground segments depending if segment transition undergound or above
+        if (segment.prefab.CompareTag("TransitionIn")) {
+            isUnderGround = true;
+        }
+        if (segment.prefab.CompareTag("TransitionOut"))
+        {
+            isUnderGround = false;
+        }
 
+        if (isUnderGround)
+        {
+            while (segment.prefab.CompareTag("Overworld"))
+            {
+                segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+            }
+
+        }
+        else
+        {
+            while (segment.prefab.CompareTag("Underground"))
+            {
+                segment = segmentPrefabs[Random.Range(1, segmentPrefabs.Count)];
+            }
+        }
+
+        GameObject newSegment = Instantiate(segment.prefab);
         if (lastExitPoint != null)
         {
             newSegment.transform.position = lastExitPoint.position - segment.entryPoint.localPosition;

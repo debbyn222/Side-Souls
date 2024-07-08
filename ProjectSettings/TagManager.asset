@@ -23,8 +23,8 @@ TagManager:
   - Platform
   - Stairs
   - Ladder
-  - 
-  - 
+  - Midground
+  - Background
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 211502639
+    locked: 0
+  - name: Midground
+    uniqueID: 1865699103
     locked: 0
   - name: Ground
     uniqueID: 1038653839
