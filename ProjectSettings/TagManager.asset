@@ -8,6 +8,12 @@ TagManager:
   - Interactable
   - Water
   - Spikes
+  - Underground
+  - Aboveground
+  - TransitionOut
+  - TransitionIn
+  - EntryPoint
+  - ExitPoint
   - Enemy
   layers:
   - Default
@@ -43,9 +49,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 211502639
+    locked: 0
+  - name: Ground
+    uniqueID: 1038653839
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Effects
     uniqueID: 1761380123
+  - name: Decorations
+    uniqueID: 3942555711
+    locked: 0
+  - name: Entity
+    uniqueID: 4174025419
     locked: 0

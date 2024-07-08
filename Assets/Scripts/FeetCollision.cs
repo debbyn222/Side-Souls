@@ -7,7 +7,7 @@ public class FeetCollision : MonoBehaviour
 {
     private Animator animator;
     private GameData gameData;
-    private BoxCollider2D feetCollider;
+    [NonSerialized] public BoxCollider2D feetCollider;
     private BoxCollider2D bodyCollider;
     private BoxCollider2D shieldCollider;
     private Player player;
@@ -18,6 +18,7 @@ public class FeetCollision : MonoBehaviour
     [NonSerialized] public bool isOnLadder;
     private bool isOnSpikes = false; //bool to prevent multiple coroutine calls
     public float platformFallThroughDuration = 0.3f;
+   
     
 
     private void Start()
@@ -25,10 +26,12 @@ public class FeetCollision : MonoBehaviour
         feetCollider = GetComponent<BoxCollider2D>();
         bodyCollider = transform.parent.Find("BodyCollider").GetComponent<BoxCollider2D>();
         shieldCollider = transform.parent.Find("ShieldCollider").GetComponent<BoxCollider2D>();
-        animator = GetComponentInParent<Animator>();
+        //animator = GetComponentInParent<Animator>();
+        animator = transform.parent.Find("PlayerSprite").GetComponent<Animator>();
         gameData = GetComponentInParent<PlayerMovement>().gameData;
         gameData.Initialize();
         player = gameData.player;
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -68,10 +71,12 @@ public class FeetCollision : MonoBehaviour
         {
             isGrounded = true;
             gameData.noFrictionMaterial.friction = isOnStairs ? 3 : 0; //increase friction when on stairs to stop sliding down
+            
         }
         else
         {
             isGrounded = false;
+            
         }
         animator.SetBool("Grounded", isGrounded);
     }

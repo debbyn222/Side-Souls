@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Hope you find these resources useful.
 
 Artwork created by Luis Zuno aka ansimuz 
@@ -8,3 +9,15 @@ ansimuz.com
 Get more Free Assetslike these at: http://www.pixelgameart.org
 
 
+=======
+Hope you find these resources useful.
+
+Artwork created by Luis Zuno aka ansimuz 
+
+ansimuz.com
+@ansimuz
+
+Get more Free Assetslike these at: http://www.pixelgameart.org
+
+
+>>>>>>> ChangePlayerSprite

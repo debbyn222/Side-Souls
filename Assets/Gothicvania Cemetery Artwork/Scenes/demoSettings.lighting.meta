@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d022621e646e2449fba7917aab2236f8
+=======
+guid: edd2c38981d1c464f9b36c9ae8a5bcd0
+>>>>>>> ChangePlayerSprite
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 4890085278179872738
