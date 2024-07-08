@@ -8,8 +8,9 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public HealthBar pHealth; //reference to (p)layer's (Health) bar
-    public float damage; //Amount of damage inflicted
+    public Health pHealth;
+    public float damage = 2;
+     
     
 
     // Start is called before the first frame update
@@ -24,11 +25,11 @@ public class Damage : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            pHealth.health -= damage;
+            pHealth.TakeDamage(damage);
         }
         //check for collision with player and apply damage & decrease player's health
     }

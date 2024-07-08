@@ -15,15 +15,18 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public float health; //current health
-    public float maxHealth = 10; //initializes maxHealth variable and sets it to 10
-    public Image healthBar; //refernece to UI healthbar
+    public float health;
+    public float maxHealth;
+    public Image healthBar;
+
+    public Health pHealth;
      
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth; //health is (re)set to maxHealth
+        
+
     }
     /* should be the other way around tho imo? as in: "health = maxHealth;"
         - however I could see a potential flaw
@@ -35,16 +38,20 @@ public class HealthBar : MonoBehaviour
     //Original comment for the original code (above) was: //maxhealth is initialized to be equal to health at start
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
-        //update fill amount of the health bar based on current health
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+      health = pHealth.health;
+      maxHealth = pHealth.maxHealth;
 
-        if (health <= 0)
-        {
-            Destroy(gameObject);//destroy the object if health drops to or below zero
-        }
+       healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+
+        /*    if (health <= 0)
+            {
+                Destroy(gameObject);
+            }*/
     }
+
+
 }
 /* Notes:
     - Should be merged with PlayerHealth.cs

@@ -7,20 +7,47 @@ Controlls: HealthPoints (why not just use health and maxHealth from HealthBar sc
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public int healthPoints = 10; //Initial health points of player
+    Animator myAnimator;
+    public float health;
+    public float maxHealth;
 
-    public void Damage(int damageAmount)
+    public Image emptyHB;
+
+
+    private void Start()
     {
-        healthPoints -= damageAmount; //reduce health by specified amount
-        Debug.Log("Health reduced by " + damageAmount + ". Current health: " + healthPoints);
 
-        if (healthPoints <= 0)
+        myAnimator = GetComponent<Animator>();
+        myAnimator.enabled = true;
+
+        health = maxHealth;
+    }
+
+    public void ManageHealth(float healthAmount)
+    {
+        health += healthAmount;
+    }
+
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        //  Debug.Log("Health reduced by " + damageAmount + ". Current health: " + health);
+    }
+
+    public void Update()
+    {
+         if (health <= 0)
         {
-            Debug.Log("Dead");
-            Destroy(gameObject);//destroys game obj if health drops to or below zero
+            //  Debug.Log("Dead");
+            emptyHB.enabled = false;
+            myAnimator.SetBool("IsDead", true);
+            Destroy(gameObject, 2f);
         }
     }
 }
