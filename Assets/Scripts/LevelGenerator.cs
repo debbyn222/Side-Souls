@@ -8,7 +8,7 @@ public class LevelGenerator : MonoBehaviour
     public Transform player;
     public Transform startPoint;
     private float generationDistance = 10f; // Distance ahead of the player to generate new segments
-    private float despawnDistance = 100f; // Distance behind the player to despawn old segments
+    private float despawnDistance = 150f; // Distance behind the player to despawn old segments
 
     private List<GameObject> activeSegments = new List<GameObject>();
     private Vector3 nextSpawnPosition;
