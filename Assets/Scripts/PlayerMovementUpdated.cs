@@ -119,10 +119,14 @@ public class PlayerMovementUpdated : MonoBehaviour
             isGrounded = false;
         }
 
-        animator.SetBool("Grounded", isGrounded); //update animator with grounded state
+        if (!isOnLadder)
+        {
+            body.gravityScale = originalGravityScale; // Reset gravity if not on ladder
+        }
+
+        animator.SetBool("Grounded", isGrounded);
     }
 
-    //Handle trigger collisions with interactable objects
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Interactable"))
@@ -196,6 +200,11 @@ public class PlayerMovementUpdated : MonoBehaviour
     //trigger jump force & animation
     void Jump()
     {
+        if (isOnLadder)
+        {
+            isOnLadder = false; // Exit ladder state when jumping
+            body.gravityScale = originalGravityScale; // Reset gravity
+        }
         body.velocity = new Vector2(body.velocity.x, jumpForce);
         animator.SetTrigger("Jump");
     }
@@ -266,9 +275,14 @@ public class PlayerMovementUpdated : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, 0);
         }
+
+        // Allow jumping off the ladder
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
     }
 
-    //resets gravity to original value when not on ladder
     void ResetGravity()
     {
         if (!isOnLadder)
