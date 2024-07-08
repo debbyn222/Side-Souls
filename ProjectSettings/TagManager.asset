@@ -8,12 +8,16 @@ TagManager:
   - Interactable
   - Water
   - Spikes
+<<<<<<< HEAD
   - Underground
   - Aboveground
   - TransitionOut
   - TransitionIn
   - EntryPoint
   - ExitPoint
+=======
+  - Enemy
+>>>>>>> ab0721542b8a15fb14fbaee087946de0d10081f7
   layers:
   - Default
   - TransparentFX

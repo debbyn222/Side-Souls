@@ -1,10 +1,15 @@
+/*Purpose:
+Handle player attacks and manage attack states
+*/
+//Last Edit: 25th of June, 2024 @3:20am PST
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject attackArea;
+    public GameObject attackArea; //reference to game obj representing attack area
 
     private bool attacking = false;
 
@@ -20,16 +25,16 @@ public class PlayerAttack : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.K)) //check for attack input
         {
             Attack();
         }
 
-        if(attacking)
+        if(attacking) //manage attack duration
         {
             timer += Time.deltaTime;
 
-            if(timer >= timeToAttack)
+            if(timer >= timeToAttack) //deactivates attack state if after specified time
             {
                 timer = 0;
                 attacking = false;
@@ -39,9 +44,13 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void Attack()
+    private void Attack() //activate attack state and attack area
     {
         attacking = true;
         attackArea.SetActive(attacking);
     }
 }
+
+/*Notes:
+This script needs to be attached to parrying related scripts.
+*/
