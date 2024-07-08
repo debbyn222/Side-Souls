@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isRolling = false;
     private IInteractable currentInteractable;
     private BoxCollider2D bodyCollider;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         { //prevent movement input during roll
             Move();
         }
-        if (feetCollision.isGrounded  && Input.GetButtonDown("Jump"))
+        if (feetCollision.isGrounded && Input.GetButtonDown("Jump"))
         {
             Jump();
         }
@@ -65,10 +65,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (feetCollision.isOnLadder) //feetCollision.isOnLadder checks if body is on ladder too
         {
+            animator.SetBool("isClimbing", true);
             ClimbLadder();
+        }
+        if (!feetCollision.isOnLadder)
+        {
+            animator.SetBool("isClimbing", false);
         }
         else
         {
+
             body.gravityScale = originalGravityScale;
         }
 
@@ -97,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         if (Mathf.Abs(moveInput) > 0.01f)
         {
             animator.SetInteger("AnimState", 1);
-            animator.speed = player.speed/7f; //7 is default
+            animator.speed = player.speed / 7f; //7 is default
         }
         else
         {
@@ -144,9 +150,11 @@ public class PlayerMovement : MonoBehaviour
         float rollBodyColliderHeight = originalBodyColliderSize.y / 2;
         float newOffsetY = originalBodyColliderOffset.y - (originalBodyColliderSize.y - rollBodyColliderHeight) / 2;
 
-        // Set new size and offset
+        // Set new body collider size and offset
         bodyCollider.size = new Vector2(bodyCollider.size.x, rollBodyColliderHeight);
         bodyCollider.offset = new Vector2(bodyCollider.offset.x, newOffsetY);
+
+        //player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 1f);
 
         StartCoroutine(EndRoll(gameData.rollAnimationClip.length, originalBodyColliderSize, originalBodyColliderOffset));
 
@@ -161,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         //revert body collider height
         bodyCollider.size = originalSize;
         bodyCollider.offset = originalOffset;
+        //player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 1f);
         // Ensure the player transitions back to the appropriate state
         animator.SetInteger("AnimState", 0);
     }

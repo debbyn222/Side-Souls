@@ -11,6 +11,7 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public AnimationClip rollAnimationClip;
+    public AnimationClip climbAnimationClip;
     public PhysicsMaterial2D noFrictionMaterial;
     [NonSerialized] public Player player;
     [NonSerialized] public BoxCollider2D playerFeetCollider;
