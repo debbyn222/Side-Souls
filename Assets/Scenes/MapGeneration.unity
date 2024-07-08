@@ -122,16 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &64521497 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7231994578970089131, guid: b47ae1a0393a43e4683c52598c4bb351, type: 3}
-  m_PrefabInstance: {fileID: 715648537}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &73837257 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2834431472769689262, guid: d2f5bed5c487aa04b9cc6a9476161e07, type: 3}
-  m_PrefabInstance: {fileID: 2147094859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &90879295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -490,11 +480,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1644263960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &333152668 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6654394256059116252, guid: d2f5bed5c487aa04b9cc6a9476161e07, type: 3}
-  m_PrefabInstance: {fileID: 2147094859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &586214168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,11 +3953,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2976706010140908914, guid: b47ae1a0393a43e4683c52598c4bb351, type: 3}
   m_PrefabInstance: {fileID: 715648537}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1116557887 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6909149809415228251, guid: b81196f4fda2d394fa0b4869214683fa, type: 3}
-  m_PrefabInstance: {fileID: 90879295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1139516525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,11 +4483,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1609999752 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2883720769609914081, guid: b47ae1a0393a43e4683c52598c4bb351, type: 3}
-  m_PrefabInstance: {fileID: 715648537}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644263952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4741,14 +4716,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentPrefabs:
   - prefab: {fileID: 1092509199}
-    entryPoint: {fileID: 64521497}
-    exitPoint: {fileID: 1609999752}
+    entryPoint: {fileID: 0}
+    exitPoint: {fileID: 0}
   - prefab: {fileID: 1853806096}
-    entryPoint: {fileID: 1116557887}
-    exitPoint: {fileID: 2036154329}
+    entryPoint: {fileID: 0}
+    exitPoint: {fileID: 0}
   - prefab: {fileID: 1775219154}
-    entryPoint: {fileID: 333152668}
-    exitPoint: {fileID: 73837257}
+    entryPoint: {fileID: 0}
+    exitPoint: {fileID: 0}
   player: {fileID: 1644263960}
   startPoint: {fileID: 185260897}
 --- !u!4 &1713013864
@@ -4951,11 +4926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffect: 0.05
---- !u!4 &2036154329 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5914124513359660083, guid: b81196f4fda2d394fa0b4869214683fa, type: 3}
-  m_PrefabInstance: {fileID: 90879295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2147094859
 PrefabInstance:
   m_ObjectHideFlags: 0
