@@ -1,3 +1,8 @@
+/*Purpose:
+Control behavior of enemy AI
+Includes: Movement, attacking, and detecting player
+*/
+//Last Edited: 25th of June, 2024 @2:24am PST
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -37,6 +42,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Check if player is in range and update raycast direction based on facing direction
         if (inRange && isFacingRight)
         {
             hit = Physics2D.Raycast(rayCast.position, Vector2.right, rayCastLength, rayCastMask);
@@ -58,6 +64,7 @@ public class EnemyAI : MonoBehaviour
             inRange = false;
         }
 
+        //if player is out of range, stop attacking
         if(inRange == false)
         {
             animator.SetBool("canWalk", false);
@@ -85,6 +92,7 @@ public class EnemyAI : MonoBehaviour
 
     void EnemyLogic()
     {
+        //Calculate distance between enemy player, and decide whether to move or attack
         distance = Vector2.Distance(transform.position, target.transform.position);
         if (distance > attackDistance)
         {
@@ -104,6 +112,7 @@ public class EnemyAI : MonoBehaviour
 
     void Move()
     {
+        //Move towards plauer if not attacking
         animator.SetBool("canWalk", true);
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
@@ -166,6 +175,7 @@ public class EnemyAI : MonoBehaviour
 
     void RaycastDebugger()
     {
+        //visualize raycast behavior with debug rays
         if (distance > attackDistance)
         {
             if (isFacingRight) 
@@ -183,6 +193,7 @@ public class EnemyAI : MonoBehaviour
 
     void Flip()
     {
+        //flip the enemy's facing direction
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
