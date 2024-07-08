@@ -24,9 +24,6 @@ public class Player: MonoBehaviour
     [NonSerialized] public float originalMaxStamina;
 
 
-
-
-
     public Player() 
     {
         // default values

@@ -2376,7 +2376,7 @@ Transform:
   m_GameObject: {fileID: 2848783657043338849}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.7725, y: 5.695404, z: -0.35243878}
+  m_LocalPosition: {x: 17.3341, y: 5.695404, z: -0.35243878}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2428,7 +2428,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4.128329, y: 1.7786641}
+  m_Size: {x: 12.730521, y: 1.7786641}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2441,7 +2441,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2848783657043338849}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 479caf5a5078e6549b7d8301bc3c36a8, type: 3}
   m_Name: 
@@ -13649,7 +13649,7 @@ Transform:
   m_GameObject: {fileID: 7559927082728408852}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.8038, y: 3.195404, z: -0.35243878}
+  m_LocalPosition: {x: 17.4304, y: 3.195404, z: -0.35243878}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -13701,7 +13701,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4.1308823, y: 1.79}
+  m_Size: {x: 12.738395, y: 1.79}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -13714,7 +13714,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7559927082728408852}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 479caf5a5078e6549b7d8301bc3c36a8, type: 3}
   m_Name: 
@@ -13747,7 +13747,7 @@ Transform:
   m_GameObject: {fileID: 7720302866649242700}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.7847, y: 2.902298, z: -0.35243878}
+  m_LocalPosition: {x: 17.3717, y: 2.902298, z: -0.35243878}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -13799,7 +13799,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4.1261463, y: 1.220044}
+  m_Size: {x: 12.723791, y: 1.220044}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -13812,7 +13812,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7720302866649242700}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 479caf5a5078e6549b7d8301bc3c36a8, type: 3}
   m_Name: 
