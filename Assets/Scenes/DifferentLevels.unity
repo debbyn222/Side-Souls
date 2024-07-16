@@ -2205,7 +2205,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674359454}
-  - component: {fileID: 674359453}
   m_Layer: 0
   m_Name: Singleton Unity.SelectionGroups.SelectionGroupManager
   m_TagString: Untagged
@@ -2213,18 +2212,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &674359453
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674359452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0878cad3b214a10ab8915827d7f7173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &674359454
 Transform:
   m_ObjectHideFlags: 1
