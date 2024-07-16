@@ -23,7 +23,6 @@ public class Player: MonoBehaviour
     [NonSerialized] public float originalHealthPoints;
     [NonSerialized] public float originalMaxStamina;
 
-    
 
     public Player() 
     {

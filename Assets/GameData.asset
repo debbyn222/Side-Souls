@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ced00d923c7d6346b33f5e2c6fd0c6f, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  rollAnimationClip: {fileID: 7400000, guid: 5118900a0fbea814ea3ffb8fada43696, type: 2}
+  rollAnimationClip: {fileID: 7400000, guid: 4421785da3f924745b53ea296cd3d846, type: 2}
+  climbAnimationClip: {fileID: 7400000, guid: 2df7b2b02e460ea46807a051029c18dd, type: 2}
   noFrictionMaterial: {fileID: 6200000, guid: e23e75ec5d009484c86ecfb6ccc91eda, type: 2}
